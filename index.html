@@ -1647,20 +1647,6 @@
 
 
 <script>
-    const instaBtn = document.querySelectorAll('.purchase-btn');
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-    instaBtn.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            if (isMobile) {
-                window.location.href = 'instagram://user?username=spirovskimartin';
-            } else {
-                window.open('https://instagram.com/spirovskimartin', '_blank');
-            }
-        });
-    });
     document.querySelectorAll('a[href="#pocetna"]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
