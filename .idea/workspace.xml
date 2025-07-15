@@ -6,35 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2eea8ed5-3f7f-4b14-8fa1-545fed4e9a79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/5.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/5.JPG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bac1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/bac1.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bac2.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/bac2.JPG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bac3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/bac3.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bmi.png" beforeDir="false" afterPath="$PROJECT_DIR$/bmi.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/dumbbells.png" beforeDir="false" afterPath="$PROJECT_DIR$/dumbbells.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/email.png" beforeDir="false" afterPath="$PROJECT_DIR$/email.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/fitness.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/fitness.JPG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/health.png" beforeDir="false" afterPath="$PROJECT_DIR$/health.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/location.png" beforeDir="false" afterPath="$PROJECT_DIR$/location.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/mealplan.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/mealplan.JPG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/nutrition.png" beforeDir="false" afterPath="$PROJECT_DIR$/nutrition.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/people.png" beforeDir="false" afterPath="$PROJECT_DIR$/people.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/pexels-vlada-karpovich-4050312.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pexels-vlada-karpovich-4050312.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/plan.png" beforeDir="false" afterPath="$PROJECT_DIR$/plan.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/price.png" beforeDir="false" afterPath="$PROJECT_DIR$/price.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tip1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/tip1.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tip2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/tip2.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tip3.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/tip3.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tip4.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/tip4.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tip5.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/tip5.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/transformation.png" beforeDir="false" afterPath="$PROJECT_DIR$/transformation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/soveti.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/soveti.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752566402458</updated>
-      <workItem from="1752566403617" duration="1890000" />
+      <workItem from="1752566403617" duration="2702000" />
     </task>
     <servers />
   </component>
