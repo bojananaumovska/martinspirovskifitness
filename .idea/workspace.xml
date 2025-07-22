@@ -5,7 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eea8ed5-3f7f-4b14-8fa1-545fed4e9a79" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bac1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bac2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bac3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bmi.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumbbells.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/email.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fitness.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/health.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mealplan.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nutrition.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/people.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plan.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/price.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tip1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tip2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tip3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tip4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tip5.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transformation.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/5.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bac1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bac2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bac3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bmi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumbbells.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitness.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/health.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mealplan.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nutrition.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/people.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pexels-vlada-karpovich-4050312.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pexels-vlada-karpovich-4050312.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/previewimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/price.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tip1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tip2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tip3.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tip4.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tip5.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transformation.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +77,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2zu1z1FVY2LDQwmN2rSyJCk53C4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,6 +91,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/bonin/WebstormProjects/martinspirovskifitness",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,8 +101,13 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness\fonts" />
+      <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness" />
+      <recent name="C:\Users\bonin\WebstormProjects\previewimage" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -64,7 +125,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752566402458</updated>
-      <workItem from="1752566403617" duration="2702000" />
+      <workItem from="1752566403617" duration="4785000" />
+      <workItem from="1753096803423" duration="1118000" />
+      <workItem from="1753098209238" duration="132000" />
+      <workItem from="1753107681183" duration="923000" />
+      <workItem from="1753109813992" duration="985000" />
+      <workItem from="1753115213080" duration="1086000" />
+      <workItem from="1753213063632" duration="3734000" />
     </task>
     <servers />
   </component>
