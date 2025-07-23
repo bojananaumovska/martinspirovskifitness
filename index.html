@@ -6,17 +6,21 @@
     <meta name="keywords" content="здрав живот, фитнес, трансформации, BMI, исхрана, слабеење, мускулна маса, тренер, програми, вежби, план за исхрана, фитнес тренинг, здрава исхрана, тренинг план, личен тренер, вежбање, мотивација, физичка активност, здравје, фитнес совети">
     <title>Martin Spirovski</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        html {
-            scroll-behavior: smooth;
+        @font-face {
+            font-family: 'Roboto Flex';
+            src: url('RobotoFlex-Regular.woff2') format('woff2'),
+            url('RobotoFlex-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
         }
         body {
             font-family: 'Roboto', Arial, sans-serif;
@@ -68,6 +72,9 @@
             align-items: center;
             gap: 20px;
             white-space: nowrap;
+        }
+        html {
+            scroll-behavior: smooth;
         }
         .logo img {
             height: 40px;
@@ -197,87 +204,6 @@
                 display: none;
             }
         }
-        .site-footer {
-            background: linear-gradient(to right, #4b0000, #8b0000, #b30000);
-            color: #fff;
-            text-align: center;
-            padding: 20px 10px;
-            font-size: 0.85rem;
-            font-weight: 300;
-            letter-spacing: 0.03em;
-            margin-top: 0px;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-        }
-        .site-footer .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .floating-icon {
-            position: absolute;
-            filter: grayscale(100%) brightness(70%);
-            opacity: 0.6;
-            pointer-events: none;
-            transition: filter 0.3s ease;
-        }
-        .floating-icon:hover {
-            filter: grayscale(0%) brightness(100%);
-            opacity: 1;
-        }
-        .floating-icon.icon1 {
-            top: 120px;
-            left: 11%;
-            width: 50px;
-        }
-        .floating-icon.icon2 {
-            top: 130px;
-            right: 12%;
-            width: 50px;
-        }
-        .floating-icon.icon3 {
-            bottom: 120px;
-            left: 35%;
-            width: 45px;
-        }
-        .floating-icon.icon4 {
-            bottom: 100px;
-            right: 9%;
-            width: 40px;
-        }
-        .floating-icon.icon5 {
-            bottom: 30px;
-            right: 90%;
-            width: 40px;
-        }
-        @media (max-width: 480px) {
-            .floating-icon {
-                position: absolute !important;
-                width: 40px !important;
-                opacity: 0.7;
-                filter: grayscale(80%) brightness(80%);
-                pointer-events: none;
-                transition: filter 0.3s ease;
-            }
-            .floating-icon.icon1 {
-                top: 190px;
-                left: 12%;
-            }
-            .floating-icon.icon2 {
-                top: 210px;
-                right: 10%;
-            }
-            .floating-icon.icon3 {
-                bottom: 460px;
-                left: 10%;
-            }
-            .floating-icon.icon4 {
-                bottom: 180px;
-                right: 10%;
-            }
-            .floating-icon.icon5 {
-                bottom: 100px;
-                right: 80%;
-            }
-        }
         .background-wrapper {
             display: flex;
             width: 100%;
@@ -374,301 +300,6 @@
                 background-position: 100% 50%;
             }
         }
-        .elegant-bmi-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #b22222;
-            cursor: pointer;
-            transition: transform 0.3s ease, text-shadow 0.3s ease;
-        }
-        .elegant-bmi-title:hover {
-            transform: scale(1.07);
-            text-shadow:
-                    2px 2px 5px rgba(178, 34, 34, 0.7),
-                    0 0 15px rgba(139, 0, 0, 0.5);
-        }
-        @media (max-width: 480px) {
-            .bmi-intro {
-                font-size: 18px !important;
-                flex-direction: row !important;
-                gap: 8px !important;
-                justify-content: center !important;
-                align-items: center !important;
-                white-space: nowrap;
-            }
-            .elegant-bmi-title {
-                font-size: 1.6rem !important;
-                line-height: 1.2;
-                padding-bottom: 10px;
-            }
-            .bmi-intro img {
-                width: 33px !important;
-                height: 33px !important;
-                filter: invert(30%) brightness(100%) !important;
-                -webkit-filter: invert(30%) brightness(100%) !important;
-                vertical-align: middle;
-            }
-            #activity {
-                height: 44px !important;
-                padding: 10px 14px !important;
-                font-size: 1rem !important;
-                border-radius: 6px !important;
-                box-sizing: border-box;
-            }
-            #weight, #height, #age, #sex {
-                height: 44px !important;
-                padding: 10px 14px !important;
-                font-size: 1rem !important;
-                border-radius: 6px !important;
-                box-sizing: border-box;
-            }
-        }
-        .bottom-wave-mask {
-            position: relative;
-            width: 100%;
-            height: 160px;
-            overflow: hidden;
-            z-index: 1;
-            background-color: #f9f9f9;
-        }
-        .bottom-wave-mask svg {
-            display: block;
-            width: 100%;
-            height: 160px;
-        }
-        .carousel {
-            position: relative;
-            max-width: 400px;
-            margin: 0 auto;
-            height: 370px;
-            background: #111;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
-            overflow: hidden;
-            font-family: 'Roboto', Arial, sans-serif;
-            margin-bottom: 10px;
-        }
-        .carousel__viewport {
-            display: flex;
-            height: 100%;
-            width: 100%;
-            overflow-x: auto;
-            overscroll-behavior-x: contain;
-            overscroll-behavior-y: contain;
-            overflow-y: hidden;
-            touch-action: pan-y;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        .carousel__viewport::-webkit-scrollbar {
-            display: none;
-        }
-        .carousel__slide {
-            flex: 0 0 100%;
-            scroll-snap-align: start;
-            max-width: 100%;
-            border-radius: 12px;
-            background: #f7f7f7;
-            color: #222;
-            font-size: 2rem;
-            font-weight: 600;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            user-select: none;
-            -webkit-user-select: none;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .carousel__slide:nth-child(even) {
-            background: #ececec;
-        }
-        .carousel__prev,
-        .carousel__next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #a30606;
-            color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-            user-select: none;
-            z-index: 10;
-        }
-        .carousel__prev:hover,
-        .carousel__next:hover {
-            opacity: 1;
-        }
-        .carousel__prev {
-            left: 15px;
-        }
-        .carousel__next {
-            right: 15px;
-        }
-        .carousel__navigation {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 20;
-        }
-        .carousel__navigation-list {
-            list-style: none;
-            display: flex;
-            gap: 12px;
-            padding: 0;
-            margin: 0;
-        }
-        .carousel__navigation-item {
-        }
-        .carousel__navigation-button {
-            display: block;
-            width: 14px;
-            height: 14px;
-            background: #ddd;
-            border-radius: 50%;
-            text-indent: -9999px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-        }
-        .carousel__navigation-button:focus,
-        .carousel__navigation-button:hover,
-        .carousel__navigation-button:active {
-            background-color: #a30606;
-            border-color: #a30606;
-            outline: none;
-        }
-        .carousel__slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            display: block;
-            pointer-events: none;
-            user-select: none;
-            transform: scale(1.24);
-            transition: transform 0.3s ease;
-            overflow: hidden;
-        }
-        @media (max-width: 480px) {
-            .carousel {
-                max-width: 320px !important;
-                height: 280px !important;
-            }
-            .carousel__slide img {
-                transform: scale(1.25) !important;
-            }
-        }
-        @media (max-width: 480px) {
-            .wave-mask {
-                height: 340px !important;
-                bottom: -50px !important;
-            }
-            .wave-mask svg {
-                height: 100% !important;
-            }
-        }
-        .parentclass {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            padding: 40px 20px;
-            flex-wrap: wrap;
-            background-color: #f9f9f9;
-        }
-        .textclass {
-            flex: 1;
-            max-width: 500px;
-            min-width: 280px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            color: #222;
-            text-align: left;
-        }
-        @media (max-width: 600px) {
-            .textclass {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-
-            .textclass h2 {
-                font-size: 1.4rem !important;
-                line-height: 1.3;
-            }
-
-            .textclass div {
-                width: 100px !important;
-            }
-
-            .textclass p {
-                font-size: 0.9rem !important;
-            }
-        }
-        .middle-wave-mask {
-            width: 100%;
-            height: 150px;
-            overflow: hidden;
-            position: relative;
-            margin-top: -1px;
-            background-color: transparent;
-        }
-        .middle-wave-mask svg {
-            width: 100%;
-            height: 100%;
-            display: block;
-            transform: scaleY(-1);
-            transform-origin: center;
-            margin-bottom: 0px;
-        }
-        .social-links {
-            display: flex;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            gap: 20px;
-            justify-content: center;
-        }
-        .social-links a {
-            color: #a30606;
-            font-size: 2.2rem;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover,
-        .social-links a:focus {
-            color: #ff4d4d;
-            outline: none;
-        }
-        .hero-content {
-            position: absolute;
-            top: 51%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            z-index: 10;
-            padding: 1rem;
-            max-width: 90%;
-        }
-        .hero-content h1 {
-            font-size: 2.7rem;
-            font-weight: 900 !important;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 0px;
-            color: #f0f0f0;
-        }
         #counter {
             font-size: 3.7rem;
             font-weight: bold;
@@ -687,519 +318,6 @@
             font-weight: 600;
             box-shadow: 0 3px 8px #b30000cc;
             transition: background-color 0.3s ease;
-        }
-        .mobile-break {
-            display: none;
-        }
-        .circles h2{
-            font-size: 1.8rem;
-        }
-        @media (max-width: 480px) {
-            .circles h2{
-                font-size: 1.4rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero-content {
-                top: 50%;
-                padding: 1.5rem 1rem;
-                max-width: 95%;
-            }
-            .hero-content h1 {
-                font-size: 1.9rem !important;
-                font-weight: 800 !important;
-                line-height: 1.3;
-                margin-bottom: 25px;
-                word-break: normal !important;
-                white-space: normal !important;
-                text-align: center;
-            }
-            .hero-content p {
-                font-size: 0.95rem !important;
-                line-height: 1.5;
-                margin-bottom: 10px;
-                color: #f0f0f0;
-                text-align: center;
-            }
-            #counter {
-                display: inline-block;
-                font-size: 3rem !important;
-                font-weight: bold;
-                color: #d42f2f;
-                margin-right: 6px;
-            }
-            .hero-content .counter-wrapper {
-                font-size: 1rem;
-                color: #f0f0f0;
-                margin-bottom: 12px;
-                text-align: center;
-            }
-            .buttonpocetna {
-                padding: 12px 24px !important;
-                font-size: 1rem !important;
-                margin-top: 16px !important;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .mobile-break {
-                display: inline;
-            }
-        }
-        .pricing-header h2 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-        .plans-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 60px;
-        }
-        .plan {
-            flex: 1 1 22%;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            min-width: 250px;
-            max-width: 290px;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .plan-title {
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 5px;
-            text-align: center;
-            color: darkred;
-        }
-        .price {
-            font-size: 25px;
-            color: #8c0404;
-            margin-bottom: 5px;
-            font-weight: 400;
-            text-align: center;
-        }
-        .features {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 20px 0;
-            text-align: center;
-        }
-        .features li {
-            margin-bottom: 8px;
-            font-weight: 400;
-            text-align: center;
-        }
-        .features i {
-            color: #8c0404;
-            margin-right: 8px;
-            font-weight: 400;
-            text-align: center;
-        }
-        .purchase-btn {
-            display: block;
-            text-align: center;
-            background: #8c0404;
-            color: #fff;
-            padding: 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .purchase-btn:hover {
-            background: #8c0404;
-        }
-        .plan.standard .purchase-btn,
-        .plan.premium .purchase-btn,
-        .plan.extra .purchase-btn {
-            background: #111;
-        }
-        .plan.standard .purchase-btn:hover,
-        .plan.premium .purchase-btn:hover,
-        .plan.extra .purchase-btn:hover {
-            background: #333;
-        }
-        @media screen and (max-width: 992px) {
-            .plans-row {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                padding: 0 10px;
-            }
-            .plan {
-                width: 80%;
-                max-width: 400px;
-                min-height: 350px;
-                margin: 0 auto;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 20px;
-            }
-        }
-        .book-section {
-            height: auto;
-            width: 100%;
-            padding: 40px 0;
-            text-align: center;
-        }
-        .book-section > .container {
-            height: 65vh;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2%;
-            margin-bottom: 30px;
-            perspective: 1200px;
-        }
-        .container > .right {
-            position: absolute;
-            height: 100%;
-            width: 55%;
-            transition: 0.7s ease-in-out;
-            transform-style: preserve-3d;
-        }
-        .book-section > .container > .right {
-            right: 0;
-            transform-origin: left;
-            border-radius: 10px 0 0 10px;
-        }
-        .right > figure.front,
-        .right > figure.back {
-            margin: 0;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-size: 200%;
-            background-repeat: no-repeat;
-            backface-visibility: hidden;
-            background-color: white;
-            overflow: hidden;
-        }
-        .right > figure.front {
-            background-position: right;
-            border-radius: 0 10px 10px 0;
-            box-shadow: 2px 2px 15px -2px rgba(0, 0, 0, 0.2);
-        }
-        .right > figure.back {
-            background-position: left;
-            border-radius: 10px 0 0 10px;
-            box-shadow: -2px 2px 15px -2px rgba(0, 0, 0, 0.2);
-            transform: rotateY(180deg);
-        }
-        .flip {
-            transform: rotateY(-180deg);
-        }
-        .flip::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            width: 100%;
-            height: 100%;
-            border-radius: 0 10px 10px 0;
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-        .book-section > button {
-            border: 2px solid #8c0404;
-            background-color: transparent;
-            color: #610303;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
-            transition: 0.3s ease-in-out;
-        }
-        .book-section > button:focus,
-        .book-section > button:active {
-            outline: none;
-        }
-        .book-section > p {
-            color: rgba(0, 0, 0, 0.7);
-            font-size: 24px;
-
-        }
-        .book-section > p > a {
-            text-decoration: none;
-            color: #8c0404;
-        }
-        .book-section > button:hover {
-            background-color: #610303;
-            color: #fff;
-        }
-        .front#cover,
-        .back#back-cover {
-            background-color: #8c0404;
-            font-family: calibri;
-            text-align: left;
-            padding: 0 30px;
-        }
-        .front#cover h1 {
-            color: #fff;
-        }
-        .front#cover p {
-            color: rgba(0, 0, 0, 0.8);
-            font-size: 14px;
-        }
-        @media (max-width: 480px) {
-            .book-section {
-                padding: 20px 0;
-            }
-
-            .book-section > button {
-                padding: 12px 18px;
-                font-size: 1rem;
-                margin-top: 40px;
-            }
-            .book-section p {
-                text-align: left;
-                line-height: 1.6;
-                font-size: 0.88rem !important;
-            }
-            .book-section .front#cover h1 {
-                font-size: 1.2rem !important;
-                font-family: 'Roboto', Arial, sans-serif;
-            }
-            .right > figure.front,
-            .right > figure.back {
-                background-size: cover;
-            }
-            .book-section > .container {
-                height: 55vh;
-                margin: 0 auto;
-                border-radius: 4%;
-            }
-        }
-        .pre-footer-info {
-            text-align: center;
-            padding: 20px 10px;
-        }
-        .pre-footer-info h2 {
-            color: #8c0404;
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-        .pre-footer-info p {
-            font-size: 1rem;
-            color: #afafaf;
-        }
-        @media (max-width: 480px) {
-            .pre-footer-info h2 {
-                font-size: 1.4rem;
-            }
-        }
-        figure.front {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: justify;
-            padding: 20px;
-            height: 100%;
-            box-sizing: border-box;
-        }
-        .back p {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #222;
-            padding: 0 10px;
-            margin-top: 77px;
-            margin-bottom: 5px;
-        }
-        .tip-image {
-            width: 80%;
-            max-height: 200px;
-            object-fit: cover;
-            border-radius: 20px;
-            margin-bottom: 10px;
-        }
-        .back {
-            position: relative;
-            padding: 20px 10px 10px;
-            text-align: center;
-            box-sizing: border-box;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-        }
-        .collab{
-            font-size: 1.8rem;
-        }
-        @media (max-width: 480px) {
-            .collab {
-                font-size: 1.4rem !important;
-            }
-        }
-        @media (max-width: 480px) {
-            .circles h3 {
-                font-size: 1rem !important;
-            }
-        }
-        .page-wrapper {
-            font-family: Arial, sans-serif;
-            color: #333;
-            padding: 40px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        .about-section {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 40px;
-            align-items: stretch;
-            min-height: 400px;
-        }
-        .about-image {
-            flex: 0 0 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .circle-frame {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 0 auto;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 6px solid #ddd;
-        }
-        .circle-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .about-text {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .about-text h1 {
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0;
-            margin-bottom: 1.2rem;
-        }
-        .about-text p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-
-        }
-        .about-text a {
-            color: #8c52ff;
-            text-decoration: none;
-        }
-        .about-text a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column;
-                align-items: center;
-                min-height: auto;
-                gap: 15px;
-            }
-            .about-image {
-                order: 1;
-                width: 100%;
-                max-width: 260px;
-                display: flex;
-                justify-content: center;
-                margin: 0;
-                padding: 0;
-            }
-            .circle-frame {
-                width: 260px;
-                height: 260px;
-                border-width: 4px;
-                margin: 0;
-                padding: 0;
-            }
-            .about-text {
-                order: 2;
-                margin-top: 0;
-                text-align: left;
-                width: 100%;
-                max-width: 600px;
-            }
-            .about-text h1 {
-                font-size: 1.2rem;
-                margin-top: 0;
-                margin-bottom: 1.3rem;
-                text-align: center;
-            }
-            .about-text p {
-                font-size: 1rem;
-                line-height: 1.5;
-                margin-bottom: 1rem;
-                text-align: center;
-            }
-        }
-        #weeks-select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-color: #fff;
-            border: 2px solid #610303;
-            border-radius: 8px;
-            padding: 6px 35px 6px 12px;
-            font-size: 14px;
-            font-family: 'Roboto', Arial, sans-serif;
-            color: #610303;
-            cursor: pointer;
-            position: relative;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="%23610303" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 14px;
-            transition: border-color 0.3s ease;
-            margin: 0 auto;
-        }
-        #weeks-select:hover {
-            border-color: #a00000;
-        }
-        #weeks-select:focus {
-            outline: none;
-            border-color: #a00000;
-            box-shadow: 0 0 5px rgba(160, 0, 0, 0.7);
-        }
-        .select-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        #zamene {
-            scroll-margin-top: 100px;
-        }
-        #ponudi{
-            scroll-margin-top: 100px;
-        }
-        #transformacii{
-            scroll-margin-top: 100px;
-        }
-        .counter-wrapper {
-            font-weight: 400;
         }
     </style>
 </head>
@@ -1245,9 +363,11 @@
     <div class="glass-overlay"></div>
 
     <div class="hero-content">
-        <h1 style="font-weight: 800; margin-bottom: 10px">
-            ТВОЈАТА&nbsp;ЖИВОТНА ТРАНСФОРМАЦИЈА<br class="mobile-break" />ЗАПОЧНУВА&nbsp;ТУКА!
+        <h1 style="font-weight: 600; margin-bottom: 10px; text-align: center;">
+            <span class="line1">ТВОЈАТА ЖИВОТНА</span><br>
+            <span class="line2">ТРАНСФОРМАЦИЈА&nbsp;ЗАПОЧНУВА&nbsp;ТУКА!</span>
         </h1>
+
         <p style="margin-bottom: 5px; font-size: 18px;font-weight:400 ">Сакаш да изгледаш подобро, да се храниш здраво и да бидеш во одлична форма цела година?<br></p>
         <p style="font-size: 18px; font-weight:400 ">
             Пријави се и започни со промена на твојот <span style="color: rgba(232, 23, 23, 0.8); font-weight: 600;">начин на живот денес!</span>
@@ -1271,7 +391,7 @@
     <div class="about-section">
         <div class="about-image">
             <div class="circle-frame">
-                <img src="bac1.webp" alt="Photo of Martin" />
+                <img src="bac1.webp" loading="lazy" alt="Photo of Martin" loading="lazy"  />
             </div>
         </div>
         <div class="about-text">
@@ -1291,30 +411,30 @@
 
         <div style="max-width: 280px;">
             <div style="position: relative; width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 6px solid #ddd;">
-                <img src="mealplan.webp" alt="Gym Movement" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="mealplan.webp" loading="lazy" alt="Gym Movement" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 style="margin-top: 20px; font-size: 1.2rem;font-weight: 400;">1. Индивидуални програми прилагодени на тебе и твиоте цели</h3>
         </div>
 
         <div style="max-width: 280px;">
             <div style="position: relative; width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 6px solid #e10600;">
-                <img src="fitness.webp" alt="Fitness Practice" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="fitness.webp" loading="lazy" alt="Fitness Practice" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 style="margin-top: 20px; font-size: 1.2rem;font-weight: 400;">2. Детално пратење на напредокот</h3>
         </div>
 
         <div style="max-width: 280px;">
             <div style="position: relative; width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 6px solid #ccc;">
-                <img src="pexels-vlada-karpovich-4050312.jpg" alt="Achievement" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="pexels-vlada-karpovich-4050312.jpg" loading="lazy" alt="Achievement" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h3 style="margin-top: 20px; font-size: 1.2rem;font-weight: 400;">3. Секојдневна комуникација и подршка</h3>
         </div>
     </div>
-    <img src="dumbbells.webp" alt="Icon 1" class="floating-icon icon1" />
-    <img src="health.webp" alt="Icon 2" class="floating-icon icon2" />
-    <img src="nutrition.webp" alt="Icon 3" class="floating-icon icon3" />
-    <img src="plan.webp" alt="Icon 4" class="floating-icon icon4" />
-    <img src="people.webp" alt="Icon 5" class="floating-icon icon5" />
+    <img src="dumbbells.webp" alt="Icon 1" class="floating-icon icon1" loading="lazy" />
+    <img src="health.webp" alt="Icon 2" class="floating-icon icon2" loading="lazy"  />
+    <img src="nutrition.webp" alt="Icon 3" class="floating-icon icon3" loading="lazy" />
+    <img src="plan.webp" alt="Icon 4" class="floating-icon icon4" loading="lazy"  />
+    <img src="people.webp" alt="Icon 5" class="floating-icon icon5" loading="lazy" />
 </section>
 
 <div class="bottom-wave-mask" aria-hidden="true">
@@ -1349,7 +469,7 @@
                 tabindex="0"
                 class="carousel__slide">
                 <div class="carousel__snapper">
-                    <img src="1.webp" alt="Description of Slide 1" />
+                    <img src="1.webp" loading="lazy" alt="Description of Slide 1" />
                     <a href="#" class="carousel__prev" onclick="showSlide(5); return false;">←</a>
                     <a href="#" class="carousel__next" onclick="showSlide(2); return false;">→</a>
                 </div>
@@ -1358,7 +478,7 @@
                 tabindex="0"
                 class="carousel__slide">
                 <div class="carousel__snapper"></div>
-                <img src="3.webp" alt="Description of Slide 2" style="width: 100%; height: auto;">
+                <img src="3.webp" loading="lazy" alt="Description of Slide 2" style="width: 100%; height: auto;">
                 <a href="#" class="carousel__prev" onclick="showSlide(1); return false;">←</a>
                 <a href="#" class="carousel__next" onclick="showSlide(3); return false;">→</a>
             </li>
@@ -1366,7 +486,7 @@
                 tabindex="0"
                 class="carousel__slide">
                 <div class="carousel__snapper"></div>
-                <img src="5.webp" alt="Description of Slide 3" style="width: 100%; height: auto;">
+                <img src="5.webp" loading="lazy" alt="Description of Slide 3" style="width: 100%; height: auto;">
                 <a href="#" class="carousel__prev" onclick="showSlide(2); return false;">←</a>
                 <a href="#" class="carousel__next" onclick="showSlide(4); return false;">→</a>
             </li>
@@ -1374,7 +494,7 @@
                 tabindex="0"
                 class="carousel__slide">
                 <div class="carousel__snapper"></div>
-                <img src="2.webp" alt="Description of Slide 4" style="width: 100%; height: auto;">
+                <img src="2.webp" loading="lazy" alt="Description of Slide 4" style="width: 100%; height: auto;">
                 <a href="#" class="carousel__prev" onclick="showSlide(3); return false;">←</a>
                 <a href="#" class="carousel__next" onclick="showSlide(5); return false;">→</a>
             </li>
@@ -1382,7 +502,7 @@
                 tabindex="0"
                 class="carousel__slide">
                 <div class="carousel__snapper"></div>
-                <img src="4.webp" alt="Description of Slide 5" style="width: 100%; height: auto;">
+                <img src="4.webp" loading="lazy" alt="Description of Slide 5" style="width: 100%; height: auto;">
                 <a href="#" class="carousel__prev" onclick="showSlide(4); return false;">←</a>
                 <a href="#" class="carousel__next" onclick="showSlide(1); return false;">→</a>
             </li>
@@ -1417,7 +537,7 @@
 
 <h2 class="collab" style=" text-align: center; font-weight: 700; color: #111111; margin-bottom: 0px;font-family: 'Roboto', Arial, sans-serif;" id="ponudi">
     СОРАБОТКА
-    <img src="price.webp" width="45px" height="45px" style="filter: invert(45%) brightness(110%); -webkit-filter: invert(32%) brightness(120%); vertical-align: middle;" alt="BMI Icon" />
+    <img src="price.webp" loading="lazy" width="45px" height="45px" style="filter: invert(45%) brightness(110%); -webkit-filter: invert(32%) brightness(120%); vertical-align: middle;" alt="BMI Icon" />
 </h2>
 
 <div class="plans-row" style="margin-bottom: 50px">
@@ -1497,7 +617,7 @@
         <div class="right">
             <figure class="back">
                 <p>5. Континуитетот е клучот.</p>
-                <img src="tip5.webp" alt="Слика за совет 5" class="tip-image" />
+                <img src="tip5.webp"  loading="lazy" alt="Слика за совет 5" class="tip-image" />
             </figure>
             <figure class="front">
                 <p style="font-weight: 400">Јади редовно🍽️, во приближно исто време🕒во текот на денот.
@@ -1510,7 +630,7 @@
         <div class="right">
             <figure class="back">
                 <p>4. Вооброчи се.</p>
-                <img src="tip4.webp" alt="Слика за совет 4" class="tip-image" />
+                <img src="tip4.webp" loading="lazy" alt="Слика за совет 4" class="tip-image" />
             </figure>
             <figure class="front">
                 <p style="font-weight: 400">Труди се да ја подобруваш техниката на сите вежби
@@ -1523,7 +643,7 @@
         <div class="right">
             <figure class="back">
                 <p>3. Изведувај ги вежбите со правилна техника.</p>
-                <img src="tip3.webp" alt="Слика за совет 3" class="tip-image" />
+                <img src="tip3.webp" loading="lazy" alt="Слика за совет 3" class="tip-image" />
             </figure>
             <figure class="front">
                 <p style="font-weight: 400">Нема потреба да вежбаш секој ден, 3-4 💪тежински тренинзи неделно
@@ -1535,7 +655,7 @@
         <div class="right">
             <figure class="back">
                 <p>2. Дади му време на телото да се опорави</p>
-                <img src="tip2.webp" alt="Слика за совет 2" class="tip-image" />
+                <img src="tip2.webp"  loading="lazy" alt="Слика за совет 2" class="tip-image" />
             </figure>
             <figure class="front">
                 <p style="font-weight: 400">💪Тренинг планот ќе ти помогне да не изоставуваш некои мускулни групи
@@ -1548,7 +668,7 @@
         <div class="right">
             <figure class="back">
                 <p>1. Состави тренинг план и стриктно придржувај се до него.</p>
-                <img src="tip1.webp" alt="Слика за совет 1" class="tip-image" />
+                <img src="tip1.webp" loading="lazy" alt="Слика за совет 1" class="tip-image" />
             </figure>
             <figure class="front" id="cover">
                 <h1 style="font-size: 1.8rem;">БЕСПЛАТНИ СОВЕТИ</h1>
@@ -1575,7 +695,7 @@
     </h2>
     <p class="bmi-intro" style=" font-weight:400 ;font-size: 25px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 10px;">
         Пресметај го твојот TDEE сега
-        <img src="bmi.webp" width="45" height="45" style="filter: invert(45%) brightness(110%); -webkit-filter: invert(32%) brightness(120%); vertical-align: middle;" alt="BMI Icon" />
+        <img src="bmi.webp" loading="lazy" width="45" height="45" style="filter: invert(45%) brightness(110%); -webkit-filter: invert(32%) brightness(120%); vertical-align: middle;" alt="BMI Icon" />
     </p>
 
 
@@ -1645,182 +765,7 @@
     </div>
 </footer>
 
-
-<script>
-    document.querySelectorAll('a[href="#pocetna"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const offset = 120; // пиксели колку да поместиш нагоре
-            const target = document.querySelector('#pocetna');
-            const topPos = target.getBoundingClientRect().top + window.pageYOffset;
-            window.scrollTo({
-                top: topPos - offset,
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    const weeksSelect = document.getElementById('weeks-select');
-    const priceDisplay = document.getElementById('price-display');
-    const purchaseBtn = document.getElementById('purchase-btn');
-
-    weeksSelect.addEventListener('change', () => {
-        const selectedOption = weeksSelect.options[weeksSelect.selectedIndex];
-        const price = selectedOption.getAttribute('data-price');
-        const weeks = selectedOption.value;
-
-        priceDisplay.innerHTML = `€${price} <span style="font-size: 16px;">/ ${weeks} недели</span>`;
-
-    });
-
-    document.querySelectorAll('.carousel__navigation-button').forEach((btn, index) => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            showSlide(index + 1);
-        });
-    });
-    function showSlide(index) {
-        const slide = document.getElementById('carousel__slide' + index);
-        if (slide) {
-            slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        }
-    }
-    var right = document.getElementsByClassName("right");
-    var si = right.length;
-    var z = 1;
-    turnRight();
-    function turnRight() {
-        if (si >= 1) {
-            si--;
-        } else {
-            si = right.length - 1;
-            function sttmot(i) {
-                setTimeout(function () {
-                    right[i].style.zIndex = "auto";
-                }, 300);
-            }
-            for (var i = 0; i < right.length; i++) {
-                right[i].className = "right";
-                sttmot(i);
-                z = 1;
-            }
-        }
-        right[si].classList.add("flip");
-        z++;
-        right[si].style.zIndex = z;
-    }
-    function turnLeft() {
-        if (si < right.length) {
-            si++;
-        } else {
-            si = 1;
-            for (var i = right.length - 1; i > 0; i--) {
-                right[i].classList.add("flip");
-                right[i].style.zIndex = right.length + 1 - i;
-            }
-        }
-        right[si - 1].className = "right";
-        setTimeout(function () {
-            right[si - 1].style.zIndex = "auto";
-        }, 350);
-    }
-
-    const counter = document.getElementById("counter");
-    const end = 100;
-    const duration = 2000;
-    let startTime = null;
-
-    function animate(now) {
-        if (!startTime) startTime = now;
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const value = Math.floor(progress * end);
-        counter.textContent = value;
-
-        if (progress < 1) {
-            requestAnimationFrame(animate);
-        }
-    }
-
-    requestAnimationFrame(animate);
-
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    document.querySelectorAll('#nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
-
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-    document.getElementById("bmiForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const weight = parseFloat(document.getElementById("weight").value);
-        const height = parseFloat(document.getElementById("height").value);
-        const age = parseInt(document.getElementById("age").value);
-        const sex = document.getElementById("sex").value;
-        const activity = parseFloat(document.getElementById("activity").value);
-
-        const TdeeAdvice = document.getElementById("TdeeAdvice");
-        const contactBtn = document.getElementById("contactBtn");
-        const errorMessage = document.getElementById("errorMessage");
-
-        errorMessage.textContent = "";
-        TdeeAdvice.textContent = "";
-        contactBtn.style.display = "none";
-
-        if (isNaN(weight) || weight < 30 || weight > 300) {
-            errorMessage.textContent = "Внеси валидна тежина (30-300 кг).";
-            return;
-        }
-        if (isNaN(height) || height < 100 || height > 250) {
-            errorMessage.textContent = "Внеси валидна висина (100-250 см).";
-            return;
-        }
-        if (isNaN(age) || age < 10 || age > 120) {
-            errorMessage.textContent = "Внеси валидна возраст (10-120 години).";
-            return;
-        }
-        if (sex !== "male" && sex !== "female") {
-            errorMessage.textContent = "Избери пол.";
-            return;
-        }
-        if (isNaN(activity) || activity <= 0) {
-            errorMessage.textContent = "Избери фактор на активност.";
-            return;
-        }
-
-        let bmr;
-        if (sex === "male") {
-            bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-        } else {
-            bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-        }
-
-        const tdee = Math.round(bmr * activity);
-
-        TdeeAdvice.innerHTML = `
-    <p><strong>Проценета дневна калориска потреба (TDEE): ${tdee} kcal</strong></p>
-    <p style="margin-top: 12px; font-size: 16px">
-        <strong>Ако сакаш да ослабеш</strong>, намали го дневниот калориски внес за приближно <strong>300–400 kcal</strong>,
-        што значи внес од околу <strong>${tdee - 400} – ${tdee - 300} kcal</strong> дневно.<br><br>
-        <strong>Ако целиш кон зголемување на мускулна маса</strong>, зголеми го внесот за приближно <strong>300–400 kcal</strong>,
-        што значи внес од околу <strong>${tdee + 300} – ${tdee + 400} kcal</strong> дневно.
-    </p>
-`;
-
-
-        contactBtn.style.display = "inline-block";
-    });
-
-
-</script>
+<script src="main.js" defer></script>
 
 </body>
 </html>
