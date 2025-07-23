@@ -221,6 +221,38 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+        @media (max-width: 480px) {
+            .background-wrapper {
+                height: 100vh !important;
+                max-height: none !important;
+                overflow: hidden !important;
+                position: relative;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            #pocetna {
+                margin: 0 !important;
+                padding: 0 !important;
+                height: 0 !important;
+                line-height: 0 !important;
+                overflow: hidden !important;
+                color: transparent !important;
+            }
+            .mobile-bg-img {
+                display: block !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                z-index: 0 !important;
+            }
+            .bac-part {
+                display: none !important;
+            }
+        }
+
         .bac-part {
             flex: 1;
             background-size: cover;
@@ -1365,7 +1397,7 @@
 </nav>
 
 <div class="background-wrapper">
-    <p id="pocetna" style="color: darkgray" id="pocetna">.</p>
+    <p id="pocetna" style="color: darkgray"></p>
     <div class="bac-part left"></div>
     <div class="bac-part center"></div>
     <div class="bac-part right"></div>
