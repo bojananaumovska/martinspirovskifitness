@@ -32,6 +32,7 @@
             overscroll-behavior-y: auto;
             overflow-x: hidden;
         }
+
         #pocetna {
             padding-top: 80px;
         }
@@ -713,25 +714,32 @@
         }
         @media (max-width: 480px) {
             .hero-content {
-                top: 50%;
+                top: 48%;
                 padding: 1.5rem 1rem;
                 max-width: 95%;
+                box-sizing: border-box;
             }
             .hero-content h1 {
-                font-size: 1.9rem !important;
+                font-size: 1.8rem !important;
                 font-weight: 800 !important;
                 line-height: 1.3;
                 margin-bottom: 25px;
+                hyphens: none !important;
                 word-break: normal !important;
+                overflow-wrap: break-word !important;
                 white-space: normal !important;
                 text-align: center;
+                max-width: 100%;
             }
             .hero-content p {
-                font-size: 0.95rem !important;
+                font-size: 0.9rem !important;
                 line-height: 1.5;
                 margin-bottom: 10px;
                 color: #f0f0f0;
                 text-align: center;
+                word-break: break-word !important;
+                white-space: normal !important;
+                overflow-wrap: break-word !important;
             }
             #counter {
                 display: inline-block;
@@ -758,6 +766,7 @@
                 display: inline;
             }
         }
+
         .pricing-header h2 {
             font-size: 26px;
             margin-bottom: 10px;
@@ -1213,6 +1222,124 @@
         .counter-wrapper {
             font-weight: 400;
         }
+        .news-section {
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 1rem;
+            font-family: Arial, sans-serif;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 360px);
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            width: 360px;
+            height: 480px;
+        }
+
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px; /* иста висина за слики */
+            overflow: hidden;
+        }
+
+        .news-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-overlay {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            max-width: 80%;
+        }
+
+        .magazine-name {
+            font-weight: 700;
+        }
+
+        .publish-date {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            margin: 1rem 1rem 0.5rem;
+            color: #111;
+        }
+
+        .news-desc {
+            font-size: 1rem;
+            margin: 0 1rem 1rem;
+            color: #555;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;  /* покажува само 3 реда текст */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1; /* ја турка копчето долу */
+        }
+
+        .read-more {
+            display: inline-block;
+            margin: 0 1rem 1rem;
+            padding: 0.45rem 1rem;
+            background-color: #8c0404;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
+            align-self: flex-start;
+        }
+
+        .read-more:hover {
+            background-color: #e10600;
+        }
+
+        /* Мобилен изглед */
+        @media (max-width: 600px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+                justify-content: stretch;
+            }
+            .news-card {
+                width: 100%;
+                height: 480px;
+            }
+
+            .img-wrapper {
+                width: 100%;
+                height: 200px;
+            }
+            .news-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1289,7 +1416,7 @@
             </div>
         </div>
         <div class="about-text">
-            <h1>Јас сум Мартин Спировски, со повеќе од една деценија искуство во спортот и фитнесот.</h1>
+            <h1>Мартин Спировски - тренер со повеќе од една деценија искуство во спортот и фитнесот.</h1>
             <p>Тренирав фудбал 13 години, од кои 2 години професионално, што ми помогна да ја развијам дисциплината, посветеноста и тимскиот дух. Моментално сум студент на Факултетот за физичка култура, спорт и здравје - 4та година. Покрај академските обврски, веќе четири години активно тренирам во теретана, а последната година работам како сертифициран фитнес тренер.</p>
             <p>За да го усовршам своето знаење и пристап кон работата, завршив два специјализирани курсеви за маркетинг, нутриционизам и програмирање на тренинг планови и циклуси.</p>
             <p>Ова ми овозможува да креирам ефективни и индивидуализирани програми за секој клиент, комбинирајќи спортско искуство со научни пристапи.</p>
@@ -1626,7 +1753,40 @@
             style="display:none; font-family: 'Roboto', Arial, sans-serif; margin-top: 30px; background-color: #e10600; color: #fff; border: none; padding: 14px 35px; border-radius: 30px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 3px 8px #b30000cc; transition: background-color 0.3s ease;">
         КОНТАКТИРАЈ МЕ
     </button>
+</section>
 
+<section class="news-section">
+    <h2 class='temp' style="text-align: center; font-weight: 700; color: #111111; margin-bottom: 40px;font-family: 'Roboto', Arial, sans-serif;">
+        НАЈНОВИ ВЕСТИ
+        <img src="news.webp" loading="lazy" width="40px" height="40px" style="filter: invert(45%) brightness(110%); -webkit-filter: invert(32%) brightness(120%); vertical-align: middle;" alt="BMI Icon" />
+    </h2>
+    <div class="news-grid">
+        <article class="news-card">
+            <div class="img-wrapper">
+                <img src="zenskimagazin.webp" alt="Martin Spirovski тренинг" class="news-img" />
+                <div class="img-overlay">
+                    <span class="magazine-name">Женски Магазин</span>
+                    <span class="publish-date">03.07.2025 | 15:27</span>
+                </div>
+            </div>
+            <h3 class="news-title">Тренингот не е трка со времето, туку со навиките - Мартин Спировски за Женски магазин</h3>
+            <p class="news-desc">Трајна промена не се постигнува со екстремни диети или интензивни програми што траат две недели. Таа доаѓа кога рутината ќе ви стане природна...</p>
+            <a href="https://zenskimagazin.faktor.mk/martin-spirovski-treningot-ne-e-trka-so-vremeto-tuku-so-navikite?fbclid=PAZXh0bgNhZW0CMTEAAaeaAQTNHEZYOaoAOkMtlMhGa1tPFte9iyQ1Tkj8oQxKJpJN89T2UqoU0JZfWQ_aem_D8mpR8f8uCv3HF6iQuo33w%232" target="_blank" class="read-more">Прочитај повеќе</a>
+        </article>
+
+        <article class="news-card">
+            <div class="img-wrapper">
+                <img src="crnobelo.jpeg" alt="Активен начин на живот" class="news-img" />
+                <div class="img-overlay">
+                    <span class="magazine-name">Црно Бело</span>
+                    <span class="publish-date">01.04.2025</span>
+                </div>
+            </div>
+            <h3 class="news-title">Активниот начин на живот треба да биде секојдневие, не само привремен проект</h3>
+            <p class="news-desc">Секој може да биде најдобра верзија од себе, само ако е подготвен да вложи труд и да верува во процесот, истакна личниот фитнес тренер Мартин Спировски...</p>
+            <a href="https://www.crnobelo.com/novosti/promo/116187-martin-spirovski-aktivniot-nachin-na-zhivot-treba-da-bide-sekojdnevie-ne-samo-privremen-proekt?fbclid=PAZXh0bgNhZW0CMTEAAae-8qtNOQhujK-pSlK477FGUesRNfIMkrFMOc1Kcf_IbrO87Pm1zaAIpOA0OA_aem_RnKjscrFvhjMb7F-pTjR9A" target="_blank" class="read-more">Прочитај повеќе</a>
+        </article>
+    </div>
 </section>
 
 <section class="pre-footer-info">
@@ -1656,7 +1816,6 @@
     </a>
 
 </div>
-
 
 <footer class="site-footer">
     <div class="footer-content">
