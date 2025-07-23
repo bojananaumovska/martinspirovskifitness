@@ -222,12 +222,23 @@
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
-
-                min-height: 100vh;   /* 🔑 ова го покрива целиот мобилен екран */
-                display: block;
+                min-height: 100vh; /* осигурај позадината да покрива цел екран */
                 position: relative;
             }
+
+            .wave-mask {
+                bottom: 0;           /* ✔️ најдолу да седи на wrapper-от */
+                height: 180px;       /* или 150-180 според вкус */
+            }
+
+            .bac-part.left,
+            .bac-part.center,
+            .bac-part.right,
+            .mobile-bg-img {
+                display: none;
+            }
         }
+
 
         .bac-part {
             flex: 1;
