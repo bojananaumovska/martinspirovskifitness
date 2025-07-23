@@ -216,14 +216,11 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
-        @media (max-width: 768px) {
-            .background-wrapper {
-                height: 300px;
-            }
-        }
         @media (max-width: 480px) {
             .background-wrapper {
-                height: 200px;
+                min-height: 85vh;
+                max-height: 85vh;
+                height: auto;
             }
         }
         .bac-part {
@@ -285,7 +282,6 @@
                 top: 0;
                 left: 0;
                 z-index: 1;
-
             }
             .glass-overlay,
             .wave-mask {
