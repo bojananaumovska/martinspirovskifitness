@@ -218,16 +218,16 @@
         }
         @media (max-width: 768px) {
             .background-wrapper {
-                height: 60vh;
-                max-height: 500px;
+                height: 40vh;  /* instead of 60vh */
             }
         }
+
         @media (max-width: 480px) {
             .background-wrapper {
-                height: 50vh;
-                max-height: 400px;
+                height: 30vh;  /* smaller on phones */
             }
         }
+
         .bac-part {
             flex: 1;
             background-size: cover;
@@ -1788,7 +1788,7 @@
 
         <article class="news-card">
             <div class="img-wrapper">
-                <img src="crnobelo.jpeg" alt="Активен начин на живот" class="news-img" />
+                <img src="crnobelo.webp" alt="Активен начин на живот" class="news-img" />
                 <div class="img-overlay">
                     <span class="magazine-name">Црно Бело</span>
                     <span class="publish-date">01.04.2025</span>
