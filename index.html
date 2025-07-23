@@ -215,31 +215,7 @@
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
-        }
-        @media (max-width: 480px) {
-            .background-wrapper {
-                background-image: url('bac2.webp');
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                min-height: 100vh; /* осигурај позадината да покрива цел екран */
-                position: relative;
-            }
-
-            .wave-mask {
-                bottom: 0;           /* ✔️ најдолу да седи на wrapper-от */
-                height: 180px;       /* или 150-180 според вкус */
-            }
-
-            .bac-part.left,
-            .bac-part.center,
-            .bac-part.right,
-            .mobile-bg-img {
-                display: none;
-            }
-        }
-
-
+        }  
         .bac-part {
             flex: 1;
             background-size: cover;
