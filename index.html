@@ -276,8 +276,9 @@
                 margin: 0 !important;
                 padding: 0 !important;
                 overflow: hidden !important;
-                background-color: transparent !important;  /* No background color */
-                height: 60vh !important;                    /* Full viewport height */
+                background-color: transparent !important;
+                height: 65vh !important; /* прилагоди по потреба */
+                max-height: 500px;       /* спречи превисок блок */
             }
 
             .mobile-bg-img {
@@ -287,25 +288,37 @@
                 width: 100% !important;
                 height: 100% !important;
                 object-fit: cover !important;
-                z-index: 10 !important;                      /* On top */
-                margin: 0 !important;
-                padding: 0 !important;
-                display: block !important;                   /* Make sure visible */
+                z-index: 1 !important;    /* Позадина */
+                display: block !important;
+            }
+
+            .glass-overlay {
+                position: absolute !important;
+                z-index: 2 !important;   /* Над позадината */
+                background: rgba(10, 10, 10, 0.45);
+                backdrop-filter: blur(2px);
+                -webkit-backdrop-filter: blur(2px);
+                clip-path: none !important;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 3 !important;   /* Над overlay */
+                padding: 1.5rem;
+                text-align: center;
+            }
+
+            .wave-mask {
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+                width: 100%;
+                height: 120px;
+                z-index: 4 !important;   /* Најгоре */
             }
 
             #pocetna {
-                margin: 0 !important;
-                padding: 0 !important;
-                height: 0 !important;
-                line-height: 0 !important;
-                overflow: hidden !important;
-                color: transparent !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .glass-overlay {
-                clip-path: none !important;
+                display: none;
             }
         }
         @keyframes gradientShift {
@@ -731,7 +744,7 @@
                 box-sizing: border-box;
             }
             .hero-content h1 {
-                font-size: 2rem !important;
+                font-size: 1.8rem !important;
                 font-weight: 800 !important;
                 line-height: 1.3;
                 margin-bottom: 25px;
