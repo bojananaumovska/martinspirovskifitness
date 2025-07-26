@@ -288,13 +288,13 @@
                 width: 100% !important;
                 height: 100% !important;
                 object-fit: cover !important;
-                z-index: 1 !important;    /* Позадина */
+                z-index: 1 !important;
                 display: block !important;
             }
 
             .glass-overlay {
                 position: absolute !important;
-                z-index: 2 !important;   /* Над позадината */
+                z-index: 2 !important;
                 background: rgba(10, 10, 10, 0.45);
                 backdrop-filter: blur(2px);
                 -webkit-backdrop-filter: blur(2px);
@@ -303,23 +303,18 @@
 
             .hero-content {
                 position: relative;
-                z-index: 3 !important;   /* Над overlay */
+                z-index: 3 !important;
                 padding: 1.5rem;
                 text-align: center;
             }
 
             .wave-mask {
                 position: absolute;
-                bottom: 0;         /* Подигнато од -20px на 0 */
+                bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 140px;     /* Зголемена висина */
+                height: 140px;
                 z-index: 4 !important;
-            }
-
-
-            #pocetna {
-                display: none;
             }
         }
         @keyframes gradientShift {
@@ -780,8 +775,8 @@
                 text-align: center;
             }
             .buttonpocetna {
-                padding: 14px 32px !important;  /* повеќе простор хоризонтално и вертикално */
-                font-size: 1.1rem !important;   /* малку поголем текст */
+                padding: 14px 32px !important;
+                font-size: 1.1rem !important;
                 margin-top: 16px !important;
                 display: block;
                 margin-left: auto;
@@ -1320,12 +1315,12 @@
             font-size: 1rem;
             margin: 0 1rem 1rem;
             color: #555;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            flex-grow: 1;
+            overflow: visible;       /* дозволи текстот да се прикажува целосно */
+            display: block;          /* нормален приказ */
+            -webkit-line-clamp: unset;
+            -webkit-box-orient: unset;
         }
+
 
         .read-more {
             display: inline-block;
@@ -1343,8 +1338,6 @@
         .read-more:hover {
             background-color: #e10600;
         }
-
-        /* Мобилен изглед */
         @media (max-width: 600px) {
             .news-grid {
                 grid-template-columns: 1fr;
@@ -1852,7 +1845,7 @@
     document.querySelectorAll('a[href="#pocetna"]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const offset = 120; // пиксели колку да поместиш нагоре
+            const offset = 120;
             const target = document.querySelector('#pocetna');
             const topPos = target.getBoundingClientRect().top + window.pageYOffset;
             window.scrollTo({
@@ -1866,14 +1859,18 @@
     const priceDisplay = document.getElementById('price-display');
     const purchaseBtn = document.getElementById('purchase-btn');
 
-    weeksSelect.addEventListener('change', () => {
+    function updatePrice() {
         const selectedOption = weeksSelect.options[weeksSelect.selectedIndex];
         const price = selectedOption.getAttribute('data-price');
         const weeks = selectedOption.value;
 
         priceDisplay.innerHTML = `€${price} <span style="font-size: 16px;">/ ${weeks} недели</span>`;
+    }
 
-    });
+    updatePrice();
+
+    weeksSelect.addEventListener('change', updatePrice);
+
 
     document.querySelectorAll('.carousel__navigation-button').forEach((btn, index) => {
         btn.addEventListener('click', e => {
