@@ -1315,8 +1315,8 @@
             font-size: 1rem;
             margin: 0 1rem 1rem;
             color: #555;
-            overflow: visible;       /* дозволи текстот да се прикажува целосно */
-            display: block;          /* нормален приказ */
+            overflow: visible;
+            display: block;
             -webkit-line-clamp: unset;
             -webkit-box-orient: unset;
         }
@@ -1357,7 +1357,88 @@
                 height: 100%;
             }
         }
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 6px;
+            font-size: 18px;
+        }
 
+        .new-price {
+            color: #8c0404;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        .discount-badge-corner {
+            position: absolute;
+            top: -37px;
+            right: -20px;
+            background: #ec0a0a;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 900;
+            padding: 25px;
+            width: 110px;
+            height: 110px;
+            text-align: center;
+            line-height: 55px;
+            transform: rotate(-15deg);
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+            clip-path: polygon(
+                    50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%
+            );
+        }
+        .plan.basic {
+            position: relative;
+        }
+        .plan.basic {
+            position: relative;
+        }
+
+        .offer-character {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .offer-character img {
+            width: 50px;
+            height: auto;
+        }
+        .speech-bubble {
+            background: #c3bebe;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+            font-size: 13px;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent #e10600 transparent transparent;
+        }
     </style>
 </head>
 <body>
@@ -1582,19 +1663,31 @@
 <div class="plans-row" style="margin-bottom: 50px">
 
     <div class="plan basic">
+        <!-- Badge горе десно -->
+        <div class="discount-badge-corner">-50€ OFF</div>
+
         <div>
             <div class="plan-title">Оналјн менторство</div>
 
-            <div class="select-wrapper">
-                <select id="weeks-select" style="margin-bottom: 10px;">
-                    <option value="8" data-price="149">8 недели</option>
-                    <option value="16" data-price="249">16 недели</option>
-                    <option value="24" data-price="349">24 недели</option>
-                </select>
+            <div class="offer-character">
+                <img src="salesman.png" alt="Offer man">
+                <div class="speech-bubble">Искористи ја понудата – трае уште кратко!</div>
             </div>
 
 
-            <div class="price" id="price-display">€149 <span style="font-size: 16px;">/ недели</span></div>
+            <div class="select-wrapper">
+                <select id="weeks-select" style="margin-bottom: 0px;">
+                    <option value="8" data-price="149" data-old="199">8 недели</option>
+                    <option value="16" data-price="249" data-old="299">16 недели</option>
+                    <option value="24" data-price="349" data-old="399">24 недели</option>
+                </select>
+            </div>
+
+            <div class="price" id="price-display">
+                <span class="old-price">€199</span>
+                <span class="new-price">€149</span>
+                <span class="per">/ 8 недели</span>
+            </div>
 
             <ul class="features">
                 <li><i class="fa fa-check-circle"></i>Индивидуален план за тренинг</li>
@@ -1604,8 +1697,10 @@
                 <li><i class="fa fa-check-circle"></i>Максимална подршка и комуникација</li>
             </ul>
         </div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyVJMTvFYk7mijTue5WAZ_A_yWviAUJttvNaa_l0_GG_Zm8Q/viewform?usp=header" class="purchase-btn" id="purchase-btn">ПРИЈАВИ СЕ</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyVJMTvFYk7mijTue5WAZ_A_yWviAUJttvNaa_l0_GG_Zm8Q/viewform?usp=header"
+           class="purchase-btn" id="purchase-btn">ПРИЈАВИ СЕ</a>
     </div>
+
 
 
     <div class="plan standard">
@@ -1854,21 +1949,24 @@
             });
         });
     });
-
     const weeksSelect = document.getElementById('weeks-select');
     const priceDisplay = document.getElementById('price-display');
     const purchaseBtn = document.getElementById('purchase-btn');
 
     function updatePrice() {
         const selectedOption = weeksSelect.options[weeksSelect.selectedIndex];
-        const price = selectedOption.getAttribute('data-price');
+        const price = selectedOption.getAttribute('data-price'); // нова цена
+        const old = selectedOption.getAttribute('data-old');     // стара цена
         const weeks = selectedOption.value;
 
-        priceDisplay.innerHTML = `€${price} <span style="font-size: 16px;">/ ${weeks} недели</span>`;
+        priceDisplay.innerHTML = `
+    <span class="old-price">€${old}</span>
+    <span class="new-price">€${price}</span>
+    <span style="font-size: 16px;">/ ${weeks} недели</span>
+  `;
     }
 
     updatePrice();
-
     weeksSelect.addEventListener('change', updatePrice);
 
 
