@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Мартин Спировски, сертифициран фитнес тренер кој ќе ти помогне да го направиш првиот чекор кон трансформација. Вложи во себе и грижи се за своето здравје со стручен и мотивирачки пристап.">
+    <meta name="keywords" content="здрав живот, фитнес, трансформации, BMI, исхрана, слабеење, мускулна маса, тренер, програми, вежби, план за исхрана, фитнес тренинг, здрава исхрана, тренинг план, личен тренер, вежбање, мотивација, физичка активност, здравје, фитнес совети">
+    <meta name="author" content="Bojana Naumovska">
+    <title>Martin Spirovski</title>
+    <link rel="preload" href="mealplan.webp" as="image">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: 'Roboto Flex';
+            src: url('RobotoFlex-Regular.woff2') format('woff2'),
+            url('RobotoFlex-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #222;
+            background-color: #f9f9f9;
+            overscroll-behavior-y: auto;
+            overflow-x: hidden;
+        }
+
+        #pocetna {
+            margin: 0 !important;
+            padding: 0 !important;
+            height: 0 !important;
+            line-height: 0 !important;
+            overflow: hidden !important;
+            color: transparent !important;
+        }
+        .top-bar {
+            background-color: #111111;
+            color: #fff;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            text-align: center;
+            letter-spacing: 0.03em;
+            font-weight: 300;
+            border-bottom: 1px solid #555;
+        }
+        .top-bar .icon {
+            height: 14px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 4px;
+            filter: brightness(100%) contrast(100%);
+        }
+        .navbar {
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+            font-weight: 300;
+            border-bottom: 2px solid;
+            border-bottom: 1px solid #555;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            white-space: nowrap;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+            padding-left: 7px;
+        }
+        .logo span {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .nav-links a {
+            color: #eee;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 10px;
+            transition: color 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+        .nav-links a:hover {
+            color: #e10600;
+            text-decoration: underline;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 24px;
+            height: 18px;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+        .hamburger div {
+            height: 3px;
+            background: linear-gradient(45deg, #e10600, #b30000);
+            border-radius: 2px;
+            transition: all 0.4s ease;
+            transform-origin: center;
+            box-shadow: none;
+        }
+        .hamburger:hover div {
+            filter: brightness(1.2);
+        }
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            box-shadow: 0 0 8px #e10600cc;
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+            box-shadow: 0 0 8px #b30000cc;
+        }
+        @media (max-width: 480px) {
+            .navbar {
+                flex-wrap: nowrap;
+                padding: 12px 15px;
+            }
+            .nav-links {
+                position: absolute;
+                top: 56px;
+                right: 0;
+                background: linear-gradient(135deg, #8b0000, #b30000);
+                flex-direction: column;
+                width: 160px;
+                display: none;
+                box-shadow: 0 8px 16px rgba(179, 0, 0, 0.7);
+                border-radius: 8px;
+                z-index: 1000;
+
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .nav-links.active {
+                display: flex;
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .nav-links a {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                color: #fff;
+                font-weight: 400;
+                transition: color 0.3s ease, transform 0.25s ease;
+                border-radius: 6px;
+            }
+            .nav-links a:hover {
+                color: #ffcccc;
+                background-color: rgba(255 255 255 / 0.15);
+                transform: scale(1.05);
+            }
+            .logo {
+                font-size: 1.1rem;
+                padding-left: 10px;
+            }
+            .top-bar {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+        @media (max-width: 360px) {
+            .logo img {
+                height: 30px;
+            }
+            .logo span {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo span {
+                display: none;
+            }
+        }
+        .background-wrapper {
+            display: flex;
+            width: 100%;
+            min-height: 85vh;
+            max-height: 700px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .bac-part {
+            flex: 1;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .bac-part.left {
+            background-image: url('bac1.webp');
+        }
+        .bac-part.center {
+            background-image: url('bac2.webp');
+        }
+        .bac-part.right {
+            background-image: url('bac3.webp');
+        }
+        .glass-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(10, 10, 10, 0.55);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            pointer-events: none;
+            z-index: 5;
+        }
+        .wave-mask {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 6;
+        }
+        .wave-mask svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .mobile-bg-img {
+            display: none;
+        }
+        @media (max-width: 480px) {
+            .bac-part.left,
+            .bac-part.center,
+            .bac-part.right {
+                display: none !important;
+            }
+
+            .background-wrapper {
+                position: relative !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                background-color: transparent !important;
+                height: 65vh !important;
+                max-height: 500px;
+            }
+
+            .mobile-bg-img {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                z-index: 1 !important;
+                display: block !important;
+            }
+
+            .glass-overlay {
+                position: absolute !important;
+                z-index: 2 !important;
+                background: rgba(10, 10, 10, 0.45);
+                backdrop-filter: blur(2px);
+                -webkit-backdrop-filter: blur(2px);
+                clip-path: none !important;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 3 !important;
+                padding: 1.5rem;
+                text-align: center;
+            }
+
+            .wave-mask {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 140px;
+                z-index: 4 !important;
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        #counter {
+            font-size: 3.7rem;
+            font-weight: bold;
+            color: rgba(232, 23, 23, 0.8);
+        }
+        .buttonpocetna {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin-top: 10px;
+            background-color: #e10600;
+            color: #fff;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 3px 8px #b30000cc;
+            transition: background-color 0.3s ease;
+        }
+        .site-footer {
+            background: linear-gradient(to right, #4b0000, #8b0000, #b30000);
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+            margin-top: 0px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+        }
+        .site-footer .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .floating-icon {
+            position: absolute;
+            filter: grayscale(100%) brightness(70%);
+            opacity: 0.6;
+            pointer-events: none;
+            transition: filter 0.3s ease;
+        }
+        .floating-icon:hover {
+            filter: grayscale(0%) brightness(100%);
+            opacity: 1;
+        }
+        .floating-icon.icon1 {
+            top: 120px;
+            left: 11%;
+            width: 50px;
+        }
+        .floating-icon.icon2 {
+            top: 130px;
+            right: 12%;
+            width: 50px;
+        }
+        .floating-icon.icon3 {
+            bottom: 120px;
+            left: 35%;
+            width: 45px;
+        }
+        .floating-icon.icon4 {
+            bottom: 100px;
+            right: 9%;
+            width: 40px;
+        }
+        .floating-icon.icon5 {
+            bottom: 30px;
+            right: 90%;
+            width: 40px;
+        }
+        @media (max-width: 480px) {
+            .floating-icon {
+                position: absolute !important;
+                width: 40px !important;
+                opacity: 0.7;
+                filter: grayscale(80%) brightness(80%);
+                pointer-events: none;
+                transition: filter 0.3s ease;
+            }
+            .floating-icon.icon1 {
+                top: 190px;
+                left: 12%;
+            }
+            .floating-icon.icon2 {
+                top: 210px;
+                right: 10%;
+            }
+            .floating-icon.icon3 {
+                bottom: 460px;
+                left: 10%;
+            }
+            .floating-icon.icon4 {
+                bottom: 180px;
+                right: 10%;
+            }
+            .floating-icon.icon5 {
+                bottom: 100px;
+                right: 80%;
+            }
+        }
+        .elegant-bmi-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #b22222;
+            cursor: pointer;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+        .elegant-bmi-title:hover {
+            transform: scale(1.07);
+            text-shadow:
+                    2px 2px 5px rgba(178, 34, 34, 0.7),
+                    0 0 15px rgba(139, 0, 0, 0.5);
+        }
+        @media (max-width: 480px) {
+            .bmi-intro {
+                font-size: 18px !important;
+                flex-direction: row !important;
+                gap: 8px !important;
+                justify-content: center !important;
+                align-items: center !important;
+                white-space: nowrap;
+            }
+            .elegant-bmi-title {
+                font-size: 1.6rem !important;
+                line-height: 1.2;
+                padding-bottom: 10px;
+            }
+            .bmi-intro img {
+                width: 33px !important;
+                height: 33px !important;
+                filter: invert(30%) brightness(100%) !important;
+                -webkit-filter: invert(30%) brightness(100%) !important;
+                vertical-align: middle;
+            }
+            #activity {
+                height: 44px !important;
+                padding: 10px 14px !important;
+                font-size: 1rem !important;
+                border-radius: 6px !important;
+                box-sizing: border-box;
+            }
+            #weight, #height, #age, #sex {
+                height: 44px !important;
+                padding: 10px 14px !important;
+                font-size: 1rem !important;
+                border-radius: 6px !important;
+                box-sizing: border-box;
+            }
+        }
+        .bottom-wave-mask {
+            position: relative;
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            z-index: 1;
+            background-color: #f9f9f9;
+        }
+        .bottom-wave-mask svg {
+            display: block;
+            width: 100%;
+            height: 160px;
+        }
+        .carousel {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            height: 370px;
+            background: #111;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            font-family: 'Roboto', Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+        .carousel__viewport {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            overscroll-behavior-y: contain;
+            overflow-y: hidden;
+            touch-action: pan-y;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .carousel__viewport::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel__slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            max-width: 100%;
+            border-radius: 12px;
+            background: #f7f7f7;
+            color: #222;
+            font-size: 2rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            -webkit-user-select: none;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel__slide:nth-child(even) {
+            background: #ececec;
+        }
+        .carousel__prev,
+        .carousel__next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #a30606;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            user-select: none;
+            z-index: 10;
+        }
+        .carousel__prev:hover,
+        .carousel__next:hover {
+            opacity: 1;
+        }
+        .carousel__prev {
+            left: 15px;
+        }
+        .carousel__next {
+            right: 15px;
+        }
+        .carousel__navigation {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+        .carousel__navigation-list {
+            list-style: none;
+            display: flex;
+            gap: 12px;
+            padding: 0;
+            margin: 0;
+        }
+        .carousel__navigation-item {
+        }
+        .carousel__navigation-button {
+            display: block;
+            width: 14px;
+            height: 14px;
+            background: #ddd;
+            border-radius: 50%;
+            text-indent: -9999px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .carousel__navigation-button:focus,
+        .carousel__navigation-button:hover,
+        .carousel__navigation-button:active {
+            background-color: #a30606;
+            border-color: #a30606;
+            outline: none;
+        }
+        .carousel__slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            transform: scale(1.24);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        @media (max-width: 480px) {
+            .carousel {
+                max-width: 320px !important;
+                height: 280px !important;
+            }
+            .carousel__slide img {
+                transform: scale(1.25) !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .wave-mask {
+                height: 340px !important;
+                bottom: -50px !important;
+            }
+            .wave-mask svg {
+                height: 100% !important;
+            }
+        }
+        .parentclass {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+        }
+        .textclass {
+            flex: 1;
+            max-width: 500px;
+            min-width: 280px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #222;
+            text-align: left;
+        }
+        @media (max-width: 600px) {
+            .textclass {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .textclass h2 {
+                font-size: 1.4rem !important;
+                line-height: 1.3;
+            }
+
+            .textclass div {
+                width: 100px !important;
+            }
+
+            .textclass p {
+                font-size: 0.9rem !important;
+            }
+        }
+        .middle-wave-mask {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+            margin-top: -1px;
+            background-color: transparent;
+        }
+        .middle-wave-mask svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transform: scaleY(-1);
+            transform-origin: center;
+            margin-bottom: 0px;
+        }
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            gap: 20px;
+            justify-content: center;
+        }
+        .social-links a {
+            color: #a30606;
+            font-size: 2.2rem;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover,
+        .social-links a:focus {
+            color: #ff4d4d;
+            outline: none;
+        }
+        .hero-content {
+            position: absolute;
+            top: 49%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 10;
+            padding: 1rem;
+            white-space: nowrap;
+        }
+        .hero-content h1 {
+            font-size: 2.7rem;
+            font-weight: 900 !important;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 0px;
+            color: #f0f0f0;
+        }
+        .mobile-break {
+            display: none;
+        }
+        .circles h2{
+            font-size: 1.8rem;
+        }
+        @media (max-width: 480px) {
+            .circles h2{
+                font-size: 1.4rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-content {
+                top: 46%;
+                padding: 1.5rem 1rem;
+                max-width: 95%;
+                box-sizing: border-box;
+            }
+            .hero-content h1 {
+                font-size: 2rem !important;
+                font-weight: 800 !important;
+                line-height: 1.3;
+                margin-bottom: 25px;
+                hyphens: none !important;
+                word-break: normal !important;
+                overflow-wrap: break-word !important;
+                white-space: normal !important;
+                text-align: center;
+                max-width: 100%;
+            }
+            .hero-content p {
+                font-size: 0.9rem !important;
+                line-height: 1.5;
+                margin-bottom: 10px;
+                color: #f0f0f0;
+                text-align: center;
+                word-break: break-word !important;
+                white-space: normal !important;
+                overflow-wrap: break-word !important;
+            }
+            #counter {
+                display: inline-block;
+                font-size: 3.2rem !important;
+                font-weight: bold;
+                color: #d42f2f;
+                margin-right: 6px;
+            }
+            .hero-content .counter-wrapper {
+                font-size: 1rem;
+                color: #f0f0f0;
+                margin-bottom: 12px;
+                text-align: center;
+            }
+            .buttonpocetna {
+                padding: 14px 32px !important;
+                font-size: 1.1rem !important;
+                margin-top: 16px !important;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .mobile-break {
+                display: inline;
+            }
+        }
+
+        .pricing-header h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        .plans-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 60px;
+        }
+        .plan {
+            flex: 1 1 22%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            min-width: 250px;
+            max-width: 290px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .plan-title {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 5px;
+            text-align: center;
+            color: darkred;
+        }
+        .price {
+            font-size: 25px;
+            color: #8c0404;
+            margin-bottom: 5px;
+            font-weight: 400;
+            text-align: center;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        .features li {
+            margin-bottom: 8px;
+            font-weight: 400;
+            text-align: center;
+        }
+        .features i {
+            color: #8c0404;
+            margin-right: 8px;
+            font-weight: 400;
+            text-align: center;
+        }
+        .purchase-btn {
+            display: block;
+            text-align: center;
+            background: #8c0404;
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .purchase-btn:hover {
+            background: #8c0404;
+        }
+        .plan.standard .purchase-btn,
+        .plan.premium .purchase-btn,
+        .plan.extra .purchase-btn {
+            background: #111;
+        }
+        .plan.standard .purchase-btn:hover,
+        .plan.premium .purchase-btn:hover,
+        .plan.extra .purchase-btn:hover {
+            background: #333;
+        }
+        @media screen and (max-width: 992px) {
+            .plans-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 0 10px;
+            }
+            .plan {
+                width: 80%;
+                max-width: 400px;
+                min-height: 350px;
+                margin: 0 auto;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 20px;
+            }
+        }
+        .book-section {
+            height: auto;
+            width: 100%;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .book-section > .container {
+            height: 65vh;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2%;
+            margin-bottom: 30px;
+            perspective: 1200px;
+        }
+        .container > .right {
+            position: absolute;
+            height: 100%;
+            width: 55%;
+            transition: 0.7s ease-in-out;
+            transform-style: preserve-3d;
+        }
+        .book-section > .container > .right {
+            right: 0;
+            transform-origin: left;
+            border-radius: 10px 0 0 10px;
+        }
+        .right > figure.front,
+        .right > figure.back {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-size: 200%;
+            background-repeat: no-repeat;
+            backface-visibility: hidden;
+            background-color: white;
+            overflow: hidden;
+        }
+        .right > figure.front {
+            background-position: right;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 2px 2px 15px -2px rgba(0, 0, 0, 0.2);
+        }
+        .right > figure.back {
+            background-position: left;
+            border-radius: 10px 0 0 10px;
+            box-shadow: -2px 2px 15px -2px rgba(0, 0, 0, 0.2);
+            transform: rotateY(180deg);
+        }
+        .flip {
+            transform: rotateY(-180deg);
+        }
+        .flip::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            border-radius: 0 10px 10px 0;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .book-section > button {
+            border: 2px solid #8c0404;
+            background-color: transparent;
+            color: #610303;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s ease-in-out;
+        }
+        .book-section > button:focus,
+        .book-section > button:active {
+            outline: none;
+        }
+        .book-section > p {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 24px;
+
+        }
+        .book-section > p > a {
+            text-decoration: none;
+            color: #8c0404;
+        }
+        .book-section > button:hover {
+            background-color: #610303;
+            color: #fff;
+        }
+        .front#cover,
+        .back#back-cover {
+            background-color: #8c0404;
+            font-family: calibri;
+            text-align: left;
+            padding: 0 30px;
+        }
+        .front#cover h1 {
+            color: #fff;
+        }
+        .front#cover p {
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 14px;
+        }
+        @media (max-width: 480px) {
+            .book-section {
+                padding: 20px 0;
+            }
+
+            .book-section > button {
+                padding: 12px 18px;
+                font-size: 1rem;
+                margin-top: 40px;
+            }
+            .book-section p {
+                text-align: left;
+                line-height: 1.6;
+                font-size: 0.88rem !important;
+            }
+            .book-section .front#cover h1 {
+                font-size: 1.2rem !important;
+                font-family: 'Roboto', Arial, sans-serif;
+            }
+            .right > figure.front,
+            .right > figure.back {
+                background-size: cover;
+            }
+            .book-section > .container {
+                height: 55vh;
+                margin: 0 auto;
+                border-radius: 4%;
+            }
+        }
+        .pre-footer-info {
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .pre-footer-info h2 {
+            color: #8c0404;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .pre-footer-info p {
+            font-size: 1rem;
+            color: #afafaf;
+        }
+        @media (max-width: 480px) {
+            .pre-footer-info h2 {
+                font-size: 1.4rem;
+            }
+        }
+        figure.front {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+            padding: 20px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .back p {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #222;
+            padding: 0 10px;
+            margin-top: 77px;
+            margin-bottom: 5px;
+        }
+        .tip-image {
+            width: 80%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .back {
+            position: relative;
+            padding: 20px 10px 10px;
+            text-align: center;
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .collab{
+            font-size: 1.8rem;
+        }
+        @media (max-width: 480px) {
+            .collab {
+                font-size: 1.4rem !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .circles h3 {
+                font-size: 1rem !important;
+            }
+        }
+        .page-wrapper {
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .about-section {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 40px;
+            align-items: stretch;
+            min-height: 400px;
+        }
+        .about-image {
+            flex: 0 0 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .circle-frame {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid #ddd;
+        }
+        .circle-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .about-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .about-text h1 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+
+        }
+        .about-text a {
+            color: #8c52ff;
+            text-decoration: none;
+        }
+        .about-text a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                align-items: center;
+                min-height: auto;
+                gap: 15px;
+            }
+            .about-image {
+                order: 1;
+                width: 100%;
+                max-width: 260px;
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+            .circle-frame {
+                width: 260px;
+                height: 260px;
+                border-width: 4px;
+                margin: 0;
+                padding: 0;
+            }
+            .about-text {
+                order: 2;
+                margin-top: 0;
+                text-align: left;
+                width: 100%;
+                max-width: 600px;
+            }
+            .about-text h1 {
+                font-size: 1.2rem;
+                margin-top: 0;
+                margin-bottom: 1.3rem;
+                text-align: center;
+            }
+            .about-text p {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+        }
+        #weeks-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #fff;
+            border: 2px solid #610303;
+            border-radius: 8px;
+            padding: 6px 35px 6px 12px;
+            font-size: 14px;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #610303;
+            cursor: pointer;
+            position: relative;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23610303" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 14px;
+            transition: border-color 0.3s ease;
+            margin: 0 auto;
+        }
+        #weeks-select:hover {
+            border-color: #a00000;
+        }
+        #weeks-select:focus {
+            outline: none;
+            border-color: #a00000;
+            box-shadow: 0 0 5px rgba(160, 0, 0, 0.7);
+        }
+        .select-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        #zamene {
+            scroll-margin-top: 100px;
+        }
+        #ponudi{
+            scroll-margin-top: 100px;
+        }
+        #transformacii{
+            scroll-margin-top: 100px;
+        }
+        .counter-wrapper {
+            font-weight: 400;
+        }
+        .news-section {
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 1rem;
+            font-family: Arial, sans-serif;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 360px);
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            width: 360px;
+            height: 480px;
+        }
+
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-overlay {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            max-width: 80%;
+        }
+
+        .magazine-name {
+            font-weight: 700;
+        }
+
+        .publish-date {
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            margin: 1rem 1rem 0.5rem;
+            color: #111;
+        }
+
+        .news-desc {
+            font-size: 1rem;
+            margin: 0 1rem 1rem;
+            color: #555;
+            overflow: visible;
+            display: block;
+            -webkit-line-clamp: unset;
+            -webkit-box-orient: unset;
+        }
+
+
+        .read-more {
+            display: inline-block;
+            margin: 0 1rem 1rem;
+            padding: 0.45rem 1rem;
+            background-color: #8c0404;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
+            align-self: flex-start;
+        }
+
+        .read-more:hover {
+            background-color: #e10600;
+        }
+        @media (max-width: 600px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+                justify-content: stretch;
+            }
+            .news-card {
+                width: 100%;
+                height: 480px;
+            }
+
+            .img-wrapper {
+                width: 100%;
+                height: 200px;
+            }
+            .news-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 6px;
+            font-size: 18px;
+        }
+
+        .new-price {
+            color: #8c0404;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        .discount-badge-corner {
+            position: absolute;
+            top: -37px;
+            right: -20px;
+            background: #ec0a0a;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 900;
+            padding: 25px;
+            width: 110px;
+            height: 110px;
+            text-align: center;
+            line-height: 55px;
+            transform: rotate(-15deg);
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+            clip-path: polygon(
+                    50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%
+            );
+        }
+        .plan.basic {
+            position: relative;
+        }
+        .plan.basic {
+            position: relative;
+        }
+
+        .offer-character {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .offer-character img {
+            width: 50px;
+            height: auto;
+        }
+        .speech-bubble {
+            background: #c3bebe;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+            font-size: 13px;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent #e10600 transparent transparent;
+        }
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <img src="email.webp" alt="Email Icon" class="icon" width="40" height="40"/>
+    <a href="mailto:s.martin@live.com" style="color: white; font-weight: 400; text-decoration: none;">s.martin@live.com</a>
+    <img src="location.webp" alt="Location Icon" class="icon" width="40" height="40" />
+    <a href="https://maps.app.goo.gl/HxDZQLZVSfcxhqL46" target="_blank" style="color: white; text-decoration: none; font-weight: 400">
+        Mateja Mateski 22, Skopje 1000
+    </a>
+</div>
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="logo.webp" alt="Martin Spirovski Logo" width="200" height="60" />
+        <span>Мартин Спировски</span>
+    </div>
+
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+        <a style="font-weight: 400" href="#pocetna">Почетна</a>
+        <a style="font-weight: 400" href="#zamene">За мене</a>
+        <a style="font-weight: 400" href="#transformacii">Трансформации</a>
+        <a style="font-weight: 400" href="#ponudi">Понуди</a>
+        <a style="font-weight: 400" href="#kontakt">Контакт</a>
+    </div>
+</nav>
+
+<div class="background-wrapper">
+    <p id="pocetna" style="color: darkgray"></p>
+    <div class="bac-part left"></div>
+    <div class="bac-part center"></div>
+    <div class="bac-part right"></div>
+    <img src="bac2.webp" alt="Full Background Mobile" class="mobile-bg-img" />
+
+    <div class="glass-overlay"></div>
+
+    <div class="hero-content">
+        <h1 style="font-weight: 600; margin-bottom: 10px; text-align: center;">
+            <span class="line1">ТВОЈАТА ЖИВОТНА</span><br>
+            <span class="line2">ТРАНСФОРМАЦИЈА</span>
+            <span class="line3">ЗАПОЧНУВА ТУКА!</span>
+        </h1>
+
+        <p style="margin-bottom: 5px; font-size: 18px;font-weight:400 ">Сакаш да изгледаш подобро, да се храниш здраво и да бидеш во одлична форма цела година?<br></p>
+        <p style="font-size: 18px; font-weight:400 ">
+            Пријави се и започни со промена на твојот <span style="color: rgba(232, 23, 23, 0.8); font-weight: 600;">начин на живот денес!</span>
+        </p>
+        <div class="counter-wrapper">
+            <span id="counter">100</span>+ задоволни клиенти
+        </div>
+        <button class="buttonpocetna" onclick="document.getElementById('ponudi').scrollIntoView({ behavior: 'smooth' })">
+            СОРАБОТКА
+        </button>
+    </div>
+
+    <div class="wave-mask" aria-hidden="true">
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#f9f9f9" d="M0,150 C480,190 960,110 1440,170 L1440,200 L0,200 Z"></path>
+        </svg>
+    </div>
+</div>
+
+<div class="page-wrapper" id="zamene">
+    <div class="about-section">
+        <div class="about-image">
+            <div class="circle-frame">
+                <img src="bac1.webp" alt="Photo of Martin" loading="lazy"  />
+            </div>
+        </div>
+        <div class="about-text">
+            <h1>Мартин Спировски - тренер со повеќе од една деценија искуство во спортот и фитнесот.</h1>
+            <p>Тренирав фудбал 13 години, од кои 2 години професионално, што ми помогна да ја развијам дисциплината, посветеноста и тимскиот дух. Моментално сум студент на Факултетот за физичка култура, спорт и здравје - 4та година. Покрај академските обврски, веќе четири години активно тренирам во теретана, а последната година работам како сертифициран фитнес тренер.</p>
+            <p>За да го усовршам своето знаење и пристап кон работата, завршив два специјализирани курсеви за маркетинг, нутриционизам и програмирање на тренинг планови и циклуси.</p>
+            <p>Ова ми овозможува да креирам ефективни и индивидуализирани програми за секој клиент, комбинирајќи спортско искуство со научни пристапи.</p>
+        </div>
+    </div>
+</div>
+
+<section class="circles" style="position: relative; text-align:center; padding: 40px 2px 0px 20px; background-color: #f9f9f9;">
+    <h2 style="font-weight: 700; color: #111111; margin-bottom: 60px;font-family: 'Roboto', Arial, sans-serif;">
+        Целосна поддршка на секој чекор
+    </h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+
+        <div style="max-width: 280px;">
+            <div style="position: relative; width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 6px solid #ddd;">
+                <img src="mealplan.webp" alt="Gym Movement" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="margin-top: 20px; font-size: 1.2rem;font-weight: 400;">1. Индивидуални програми прилагодени на тебе и твоите цели</h3>
+        </div>
+
+        <div style="max-width: 280px;">
+            <div style="position: relative; width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 6px solid #e10600;">
+                <img src="fitness.webp" alt="Fitness Practice" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="margin-top: 20px; font-size: 1.2rem;font-weight: 400;">2. Детално пратење на напредокот</h3>
+        </div>
+
+        <div style="max-width: 280px;">
+            <div style="position: relative; width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; overflow: hidden; border: 6px solid #ccc;">
+                <img src="pexels-vlada-karpovich-4050312.jpg" alt="Achievement" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 style="margin-top: 20px; font-size: 1.2rem;font-weight: 400;">3. Секојдневна комуникација и поддршка</h3>
+        </div>
+    </div>
+    <img src="dumbbells.webp" alt="Icon 1" class="floating-icon icon1"/>
+    <img src="health.webp" alt="Icon 2" class="floating-icon icon2" />
+    <img src="nutrition.webp" alt="Icon 3" class="floating-icon icon3"/>
+    <img src="plan.webp" alt="Icon 4" class="floating-icon icon4"/>
+    <img src="people.webp" alt="Icon 5" class="floating-icon icon5"/>
+</section>
+
+<div class="bottom-wave-mask" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#111" d="M0,150 C480,190 960,110 1440,170 L1440,200 L0,200 Z"></path>
+    </svg>
+</div>
+
+<div class="parentclass" style="background-color: #111111" id="transformacii">
+    <div class="textclass" style="background-color: #111111; padding-left: 110px;">
+        <h2 style="font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 20px;font-family: 'Roboto', Arial, sans-serif;">
+            Вистински резултати, реални
+            ТРАНСФОРМАЦИИ
+        </h2>
+        <div style="
+        height: 4px;
+        width: 140px;
+        background: linear-gradient(90deg, #ff0000, #ff6666);
+        margin-bottom: 25px;">
+        </div>
+        <p style="color: #ccc; font-weight:400 ;font-size: 1rem; line-height: 1.6;font-family: 'Roboto', Arial, sans-serif;">
+            Секоја трансформација има своја приказна – приказна на одлучност, дисциплина и посветеност. Како личен тренер, моја мисија е да ти помогнам да ја достигнеш твојата најдобра верзија. Без оглед дали целта ти е слабеење, зголемување на мускулна маса или едноставно поздрав начин на живот, секој чекор го поминуваме заедно.
+        </p>
+        <p style=" font-weight:400 ;color: #bbb; font-size: 0.95rem; margin-top: 15px;font-family: 'Roboto', Arial, sans-serif;">
+            Инспирирај се од вистински луѓе, вистински резултати. Придружи ни се денес.
+        </p>
+    </div>
+
+    <section class="carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+            <li id="carousel__slide1"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper">
+                    <img src="1.webp" loading="lazy" alt="Description of Slide 1" />
+                    <a href="#" class="carousel__prev" onclick="showSlide(5); return false;">←</a>
+                    <a href="#" class="carousel__next" onclick="showSlide(2); return false;">→</a>
+                </div>
+            </li>
+            <li id="carousel__slide2"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <img src="3.webp" loading="lazy" alt="Description of Slide 2" style="width: 100%; height: auto;">
+                <a href="#" class="carousel__prev" onclick="showSlide(1); return false;">←</a>
+                <a href="#" class="carousel__next" onclick="showSlide(3); return false;">→</a>
+            </li>
+            <li id="carousel__slide3"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <img src="5.webp" loading="lazy" alt="Description of Slide 3" style="width: 100%; height: auto;">
+                <a href="#" class="carousel__prev" onclick="showSlide(2); return false;">←</a>
+                <a href="#" class="carousel__next" onclick="showSlide(4); return false;">→</a>
+            </li>
+            <li id="carousel__slide4"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <img src="2.webp" loading="lazy" alt="Description of Slide 4" style="width: 100%; height: auto;">
+                <a href="#" class="carousel__prev" onclick="showSlide(3); return false;">←</a>
+                <a href="#" class="carousel__next" onclick="showSlide(5); return false;">→</a>
+            </li>
+            <li id="carousel__slide5"
+                tabindex="0"
+                class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <img src="4.webp" loading="lazy" alt="Description of Slide 5" style="width: 100%; height: auto;">
+                <a href="#" class="carousel__prev" onclick="showSlide(4); return false;">←</a>
+                <a href="#" class="carousel__next" onclick="showSlide(1); return false;">→</a>
+            </li>
+        </ol>
+        <aside class="carousel__navigation">
+            <ol class="carousel__navigation-list">
+                <li class="carousel__navigation-item">
+                    <a href="javascript:void(0)" class="carousel__navigation-button" onclick="showSlide(1);">Go to slide 1</a>
+                </li>
+                <li class="carousel__navigation-item">
+                    <a href="javascript:void(0)" class="carousel__navigation-button" onclick="showSlide(2);">Go to slide 2</a>
+                </li>
+                <li class="carousel__navigation-item">
+                    <a href="javascript:void(0)" class="carousel__navigation-button" onclick="showSlide(3);">Go to slide 3</a>
+                </li>
+                <li class="carousel__navigation-item">
+                    <a href="javascript:void(0)" class="carousel__navigation-button" onclick="showSlide(4);">Go to slide 4</a>
+                </li>
+                <li class="carousel__navigation-item">
+                    <a href="javascript:void(0)" class="carousel__navigation-button" onclick="showSlide(5);">Go to slide 4</a>
+                </li>
+            </ol>
+        </aside>
+    </section>
+</div>
+
+<div class="middle-wave-mask" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#111" d="M0,150 C480,190 960,110 1440,170 L1440,200 L0,200 Z"></path>
+    </svg>
+</div>
+
+<h2 class="collab" style=" text-align: center; font-weight: 700; color: #111111; margin-bottom: 0px;font-family: 'Roboto', Arial, sans-serif;" id="ponudi">
+    СОРАБОТКА
+    <img src="price.webp" loading="lazy" width="45px" height="45px" style="filter: invert(45%) brightness(110%); -webkit-filter: invert(32%) brightness(120%); vertical-align: middle;" alt="BMI Icon" />
+</h2>
+
+<div class="plans-row" style="margin-bottom: 50px">
+
+    <div class="plan basic">
+        <div class="discount-badge-corner">-50€ OFF</div>
+
+        <div>
+            <div class="plan-title">Оnline менторство</div>
+
+            <div class="offer-character">
+                <img src="salesman.png" alt="Offer man">
+                <div class="speech-bubble">Искористи ја понудата – трае уште кратко!</div>
+            </div>
+
+
+            <div class="select-wrapper">
+                <select id="weeks-select" style="margin-bottom: 0px;">
+                    <option value="8" data-price="149" data-old="199">8 недели</option>
+                    <option value="16" data-price="249" data-old="299">16 недели</option>
+                    <option value="24" data-price="349" data-old="399">24 недели</option>
+                </select>
+            </div>
+
+            <div class="price" id="price-display">
+                <span class="old-price">€199</span>
+                <span class="new-price">€149</span>
+                <span class="per">/ 8 недели</span>
+            </div>
+
+            <ul class="features">
+                <li><i class="fa fa-check-circle"></i>Индивидуален план за тренинг</li>
+                <li><i class="fa fa-check-circle"></i>Снимки за правилно изведување на вежбите</li>
+                <li><i class="fa fa-check-circle"></i>Индивидуален план за исхрана</li>
+                <li><i class="fa fa-check-circle"></i>Пратење на напредокот</li>
+                <li><i class="fa fa-check-circle"></i>Максимална поддршка и комуникација</li>
+            </ul>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyVJMTvFYk7mijTue5WAZ_A_yWviAUJttvNaa_l0_GG_Zm8Q/viewform?usp=header"
+           class="purchase-btn" id="purchase-btn">ПРИЈАВИ СЕ</a>
+    </div>
+
+
+
+    <div class="plan standard">
+        <div>
+            <div class="plan-title">Персонални тренинзи</div>
+            <ul class="features">
+                <p style="color: #f9f9f9; margin-bottom: 5px">.....</p>
+                <li><i class="fa fa-check-circle"></i>Персонални планови за тренинг и исхрана прилагодени на твоите цели</li>
+                <li><i class="fa fa-check-circle"></i>Тренинзи за сила, издржливост и мобилност</li>
+                <li><i class="fa fa-check-circle"></i>Мотивирачки и пријателски пристап за постигнување на резултати</li>
+                <li><i class="fa fa-check-circle"></i>Пратење на напредокот</li>
+                <li><i class="fa fa-check-circle"></i>Максимална поддршка и комуникација</li>
+            </ul>
+        </div>
+        <a href="https://instagram.com/spirovskimartin" target="_blank" rel="noopener noreferrer" class="purchase-btn">ЗАКАЖИ КОНСУЛТАЦИИ</a>
+    </div>
+
+    <div class="plan premium">
+        <div>
+            <div class="plan-title">Тренинзи со спортисти и рехабилитација</div>
+            <ul class="features">
+                <li><i class="fa fa-check-circle"></i>Тренинзи за подобрување на спортските перформанси</li>
+                <li><i class="fa fa-check-circle"></i>Контролиран тренинг. Безбедно враќање во форма.</li>
+                <li><i class="fa fa-check-circle"></i>Фокус на техника, стабилност и безбедност</li>
+                <li><i class="fa fa-check-circle"></i>Работа со спортисти од различни дисциплини</li>
+                <li><i class="fa fa-check-circle"></i>Индивидуален тренинг план и исхрана</li>
+                <li><i class="fa fa-check-circle"></i>Пријателски пристап и редовна комуникација</li>
+            </ul>
+        </div>
+        <a href="https://instagram.com/spirovskimartin" target="_blank" rel="noopener noreferrer" class="purchase-btn">ЗАКАЖИ КОНСУЛТАЦИИ</a>
+    </div>
+
+</div>
+
+<div class="book-section">
+    <div class="container">
+        <div class="right">
+            <figure class="back" id="back-cover">
+            </figure>
+            <figure class="front">
+                <p style="font-weight: 400">Остани и уживај во процесот, не ги бркај резултатите.
+                    Очекувањето на некој резултат или бркање на бројки 📉 и вага
+                    може само да ти направи фрустрација. Ова го правиш за да се чувствуваш подобро и поздраво,
+                    резултатите во огледало 🪞 сами ќе си дојдат✅.</p>
+            </figure>
+        </div>
+
+        <div class="right">
+            <figure class="back">
+                <p>5. Континуитетот е клучот.</p>
+                <img src="tip5.webp"  loading="lazy" alt="Слика за совет 5" class="tip-image" />
+            </figure>
+            <figure class="front">
+                <p style="font-weight: 400">Јади редовно🍽️, во приближно исто време🕒во текот на денот.
+                    Распореди ги оброците🍳како тебе намногу ти одговара.
+                    Обиди се да јадеш приближно исти оброци
+                    за да пратиш како телото ти реагира на истите.</p>
+            </figure>
+        </div>
+
+        <div class="right">
+            <figure class="back">
+                <p>4. Вооброчи се.</p>
+                <img src="tip4.webp" loading="lazy" alt="Слика за совет 4" class="tip-image" />
+            </figure>
+            <figure class="front">
+                <p style="font-weight: 400">Труди се да ја подобруваш техниката на сите вежби
+                    и да ја контролираш тежината при секое повторување.
+                    Само така ќе направиш максимална 🧠💪 “mind-muscle” конекција
+                    и ќе се заштитиш од понатамошни повреди.</p>
+            </figure>
+        </div>
+
+        <div class="right">
+            <figure class="back">
+                <p>3. Изведувај ги вежбите со правилна техника.</p>
+                <img src="tip3.webp" loading="lazy" alt="Слика за совет 3" class="tip-image" />
+            </figure>
+            <figure class="front">
+                <p style="font-weight: 400">Нема потреба да вежбаш секој ден, 3-4 💪тежински тренинзи неделно
+                    и повеќе од доволно ја завршуваат работата ✅
+                    кога се работи за природни вежбачи.</p>
+            </figure>
+        </div>
+
+        <div class="right">
+            <figure class="back">
+                <p>2. Дади му време на телото да се опорави</p>
+                <img src="tip2.webp"  loading="lazy" alt="Слика за совет 2" class="tip-image" />
+            </figure>
+            <figure class="front">
+                <p style="font-weight: 400">💪Тренинг планот ќе ти помогне да не изоставуваш некои мускулни групи
+                    и да го пратиш напредокот 📈 на сите вежби од тренинг на тренинг.
+                    📅 Води се по истиот план 6-10 недели,
+                    па потоа направи некои измени.</p>
+            </figure>
+        </div>
+
+        <div class="right">
+            <figure class="back">
+                <p>1. Состави тренинг план и стриктно придржувај се до него.</p>
+                <img src="tip1.webp" loading="lazy" alt="Слика за совет 1" class="tip-image" />
+            </figure>
+            <figure class="front" id="cover">
+                <h1 style="font-size: 1.8rem;">БЕСПЛАТНИ СОВЕТИ</h1>
+            </figure>
+        </div>
+
+    </div>
+    <button onclick="turnLeft()">Претходна</button>
+    <button onclick="turnRight()">Следна</button>
+    <br />
+</div>
+
+<div style="text-align: center;">
+    <a href="martinspirovski_treningpriracnik.pdf" download>
+        <button style="background: #8c0404;  margin-bottom:30px; font-family: 'Roboto', Arial, sans-serif; border: none; padding: 12px 25px; border-radius: 6px; color: #fff; cursor: pointer; font-weight: 600; font-size: 1rem; transition: background 0.3s ease;">
+            БЕСПЛАТЕН ТРЕНИНГ ПРИРАЧНИК
+        </button>
+    </a>
+</div>
+
+<section style="background-color: #f9f9f9; margin-top: 80px; margin-bottom: 20px; padding: 0px 20px 20px 20px; text-align: center; color: #222;">
+    <h2 class="elegant-bmi-title">
+        Идеален калориски внес за одржување (TDEE)
+    </h2>
+    <p class="bmi-intro" style=" font-weight:400 ;font-size: 25px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+        Пресметај го твојот TDEE сега
+        <img src="bmi.webp" loading="lazy" width="45" height="45" style="filter: invert(45%) brightness(110%); -webkit-filter: invert(32%) brightness(120%); vertical-align: middle;" alt="BMI Icon" />
+    </p>
+
+
+    <form id="bmiForm" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; max-width: 1100px; margin: 0 auto;">
+        <input type="number" id="weight" min="30" max="300" placeholder="Тежина / KG" required style="padding: 12px 14px; border: 1px solid #ccc; border-radius: 4px; width: 160px; background: #fff; color: #222;">
+        <input type="number" id="height" min="100" max="250" placeholder="Висина / CM" required style="padding: 12px 14px; border: 1px solid #ccc; border-radius: 4px; width: 160px; background: #fff; color: #222;">
+        <input type="number" id="age"   min="10" max="120" placeholder="Возраст" required style="padding: 12px 14px; border: 1px solid #ccc; border-radius: 4px; width: 100px; background: #fff; color: #222;">
+
+        <select id="sex" required style="padding: 12px 14px; border: 1px solid #ccc; border-radius: 4px; width: 140px; background: #fff; color: #222;">
+            <option value="">Пол</option>
+            <option value="male">Машки</option>
+            <option value="female">Женски</option>
+        </select>
+
+        <select id="activity" required style="padding: 12px 14px; border: 1px solid #ccc; border-radius: 4px; width: 240px; background: #fff; color: #222;">
+            <option value="">Фактор на активност</option>
+            <option value="1.2">Слабо активен (ретко или никогаш не вежбам)</option>
+            <option value="1.375">Умерено активен (1–3 пати неделно)</option>
+            <option value="1.55">Средно активен (3–5 пати неделно)</option>
+            <option value="1.725">Многу активен (6–7 пати неделно)</option>
+            <option value="1.9">Екстремно активен (2x дневно)</option>
+        </select>
+
+        <button type="submit" style="background: #8c0404; font-family: 'Roboto', Arial, sans-serif; border: none; padding: 12px 25px; border-radius: 6px; color: #fff; cursor: pointer; font-weight: 600; font-size: 1rem; transition: background 0.3s ease;">
+            Пресметај
+        </button>
+    </form>
+
+    <div id="errorMessage" style="color: #e10600; font-weight: 600; margin-top: 20px;"></div>
+    <div id="TdeeAdvice" style="margin-top: 25px; font-size: 1.4rem; font-weight: 400; max-width: 700px; margin-left: auto; margin-right: auto; color: #444;"></div>
+
+    <button id="contactBtn"
+            onclick="window.open('https://instagram.com/spirovskimartin', '_blank')"
+            style="display:none; font-family: 'Roboto', Arial, sans-serif; margin-top: 30px; background-color: #e10600; color: #fff; border: none; padding: 14px 35px; border-radius: 30px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 3px 8px #b30000cc; transition: background-color 0.3s ease;">
+        КОНТАКТИРАЈ МЕ
+    </button>
+</section>
+
+<section class="news-section">
+    <h2 class='temp' style="text-align: center; font-weight: 700; color: #111111; margin-bottom: 40px;font-family: 'Roboto', Arial, sans-serif;">
+        НАЈНОВИ ВЕСТИ
+        <img src="news.webp" loading="lazy" width="40px" height="40px" style="filter: invert(45%) brightness(110%); -webkit-filter: invert(32%) brightness(120%); vertical-align: middle;" alt="BMI Icon" />
+    </h2>
+    <div class="news-grid">
+        <article class="news-card">
+            <div class="img-wrapper">
+                <img src="zenskimagazin.webp" alt="Martin Spirovski тренинг" class="news-img" />
+                <div class="img-overlay">
+                    <span class="magazine-name">Женски Магазин</span>
+                    <span class="publish-date">03.07.2025 | 15:27</span>
+                </div>
+            </div>
+            <h3 class="news-title">Тренингот не е трка со времето, туку со навиките - Мартин Спировски за Женски магазин</h3>
+            <p class="news-desc">Трајна промена не се постигнува со екстремни диети или интензивни програми што траат две недели. Таа доаѓа кога рутината ќе ви стане природна...</p>
+            <a href="https://zenskimagazin.faktor.mk/martin-spirovski-treningot-ne-e-trka-so-vremeto-tuku-so-navikite?fbclid=PAZXh0bgNhZW0CMTEAAaeaAQTNHEZYOaoAOkMtlMhGa1tPFte9iyQ1Tkj8oQxKJpJN89T2UqoU0JZfWQ_aem_D8mpR8f8uCv3HF6iQuo33w%232" target="_blank" class="read-more">Прочитај повеќе</a>
+        </article>
+
+        <article class="news-card">
+            <div class="img-wrapper">
+                <img src="crnobelo.webp" alt="Активен начин на живот" class="news-img" />
+                <div class="img-overlay">
+                    <span class="magazine-name">Црно Бело</span>
+                    <span class="publish-date">01.04.2025</span>
+                </div>
+            </div>
+            <h3 class="news-title">Активниот начин на живот треба да биде секојдневие, не само привремен проект</h3>
+            <p class="news-desc">Секој може да биде најдобра верзија од себе, само ако е подготвен да вложи труд и да верува во процесот, истакна личниот фитнес тренер Мартин Спировски...</p>
+            <a href="https://www.crnobelo.com/novosti/promo/116187-martin-spirovski-aktivniot-nachin-na-zhivot-treba-da-bide-sekojdnevie-ne-samo-privremen-proekt?fbclid=PAZXh0bgNhZW0CMTEAAae-8qtNOQhujK-pSlK477FGUesRNfIMkrFMOc1Kcf_IbrO87Pm1zaAIpOA0OA_aem_RnKjscrFvhjMb7F-pTjR9A" target="_blank" class="read-more">Прочитај повеќе</a>
+        </article>
+    </div>
+</section>
+
+<section class="pre-footer-info">
+    <h2>Мартин Спировски</h2>
+    <p style="font-weight: 400">Бесплатни совети и рецепти, понуди, трансформации,<br>
+        се за спортот и фитнесот на едно место.</p>
+</section>
+
+<div class="social-links" id="kontakt">
+    <a href="https://www.facebook.com/martin.spirovski.124158" target="_blank" aria-label="Facebook" rel="noopener noreferrer" class="facebook-link">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="1em" height="1em" aria-hidden="true">
+            <title>Facebook</title>
+            <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
+        </svg>
+    </a>
+    <a href="https://www.instagram.com/spirovskimartin/" target="_blank" aria-label="Instagram" rel="noopener noreferrer" class="instagram-link">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="1em" height="1em" aria-hidden="true">
+            <title>Instagram</title>
+            <path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/>
+        </svg>
+    </a>
+    <a href="mailto:s.martin@live.com" aria-label="Email" rel="noopener noreferrer" class="email-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor" width="2.8rem" height="2.8rem" aria-hidden="true" role="img">
+            <title>Email</title>
+            <path d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"/>
+        </svg>
+    </a>
+
+</div>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <p style="font-weight: 400">&copy; 2025 Martin Spirovski Fitness. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href="#pocetna"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const offset = 120;
+            const target = document.querySelector('#pocetna');
+            const topPos = target.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: topPos - offset,
+                behavior: 'smooth'
+            });
+        });
+    });
+    const weeksSelect = document.getElementById('weeks-select');
+    const priceDisplay = document.getElementById('price-display');
+    const purchaseBtn = document.getElementById('purchase-btn');
+
+    function updatePrice() {
+        const selectedOption = weeksSelect.options[weeksSelect.selectedIndex];
+        const price = selectedOption.getAttribute('data-price'); // нова цена
+        const old = selectedOption.getAttribute('data-old');     // стара цена
+        const weeks = selectedOption.value;
+
+        priceDisplay.innerHTML = `
+    <span class="old-price">€${old}</span>
+    <span class="new-price">€${price}</span>
+    <span style="font-size: 16px;">/ ${weeks} недели</span>
+  `;
+    }
+
+    updatePrice();
+    weeksSelect.addEventListener('change', updatePrice);
+
+
+    document.querySelectorAll('.carousel__navigation-button').forEach((btn, index) => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            showSlide(index + 1);
+        });
+    });
+    function showSlide(index) {
+        const slide = document.getElementById('carousel__slide' + index);
+        if (slide) {
+            slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        }
+    }
+    var right = document.getElementsByClassName("right");
+    var si = right.length;
+    var z = 1;
+    turnRight();
+    function turnRight() {
+        if (si >= 1) {
+            si--;
+        } else {
+            si = right.length - 1;
+            function sttmot(i) {
+                setTimeout(function () {
+                    right[i].style.zIndex = "auto";
+                }, 300);
+            }
+            for (var i = 0; i < right.length; i++) {
+                right[i].className = "right";
+                sttmot(i);
+                z = 1;
+            }
+        }
+        right[si].classList.add("flip");
+        z++;
+        right[si].style.zIndex = z;
+    }
+    function turnLeft() {
+        if (si < right.length) {
+            si++;
+        } else {
+            si = 1;
+            for (var i = right.length - 1; i > 0; i--) {
+                right[i].classList.add("flip");
+                right[i].style.zIndex = right.length + 1 - i;
+            }
+        }
+        right[si - 1].className = "right";
+        setTimeout(function () {
+            right[si - 1].style.zIndex = "auto";
+        }, 350);
+    }
+
+    const counter = document.getElementById("counter");
+    const end = 100;
+    const duration = 2000;
+    let startTime = null;
+
+    function animate(now) {
+        if (!startTime) startTime = now;
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(progress * end);
+        counter.textContent = value;
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+    document.getElementById("bmiForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const weight = parseFloat(document.getElementById("weight").value);
+        const height = parseFloat(document.getElementById("height").value);
+        const age = parseInt(document.getElementById("age").value);
+        const sex = document.getElementById("sex").value;
+        const activity = parseFloat(document.getElementById("activity").value);
+
+        const TdeeAdvice = document.getElementById("TdeeAdvice");
+        const contactBtn = document.getElementById("contactBtn");
+        const errorMessage = document.getElementById("errorMessage");
+
+        errorMessage.textContent = "";
+        TdeeAdvice.textContent = "";
+        contactBtn.style.display = "none";
+
+        if (isNaN(weight) || weight < 30 || weight > 300) {
+            errorMessage.textContent = "Внеси валидна тежина (30-300 кг).";
+            return;
+        }
+        if (isNaN(height) || height < 100 || height > 250) {
+            errorMessage.textContent = "Внеси валидна висина (100-250 см).";
+            return;
+        }
+        if (isNaN(age) || age < 10 || age > 120) {
+            errorMessage.textContent = "Внеси валидна возраст (10-120 години).";
+            return;
+        }
+        if (sex !== "male" && sex !== "female") {
+            errorMessage.textContent = "Избери пол.";
+            return;
+        }
+        if (isNaN(activity) || activity <= 0) {
+            errorMessage.textContent = "Избери фактор на активност.";
+            return;
+        }
+
+        let bmr;
+        if (sex === "male") {
+            bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+        } else {
+            bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+        }
+
+        const tdee = Math.round(bmr * activity);
+
+        TdeeAdvice.innerHTML = `
+    <p><strong>Проценета дневна калориска потреба (TDEE): ${tdee} kcal</strong></p>
+    <p style="margin-top: 12px; font-size: 16px">
+        <strong>Ако сакаш да ослабеш</strong>, намали го дневниот калориски внес за приближно <strong>300–400 kcal</strong>,
+        што значи внес од околу <strong>${tdee - 400} – ${tdee - 300} kcal</strong> дневно.<br><br>
+        <strong>Ако целиш кон зголемување на мускулна маса</strong>, зголеми го внесот за приближно <strong>300–400 kcal</strong>,
+        што значи внес од околу <strong>${tdee + 300} – ${tdee + 400} kcal</strong> дневно.
+    </p>
+`;
+        contactBtn.style.display = "inline-block";
+    });
+</script>
+
+</body>
+</html>
