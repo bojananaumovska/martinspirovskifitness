@@ -37,6 +37,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/bonin/WebstormProjects/martinspirovskifitness",
@@ -54,9 +55,11 @@
       <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness\documents" />
+      <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness\assests\images" />
+      <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness\assests\fonts" />
       <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness" />
       <recent name="C:\Users\bonin\WebstormProjects\martinspirovskifitness\fonts" />
-      <recent name="C:\Users\bonin\WebstormProjects\previewimage" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -89,7 +92,9 @@
       <workItem from="1756498678529" duration="786000" />
       <workItem from="1758271796606" duration="4133000" />
       <workItem from="1770289128799" duration="35000" />
-      <workItem from="1770302353044" duration="680000" />
+      <workItem from="1770302353044" duration="1790000" />
+      <workItem from="1770934063596" duration="131000" />
+      <workItem from="1773573113548" duration="1075000" />
     </task>
     <servers />
   </component>
