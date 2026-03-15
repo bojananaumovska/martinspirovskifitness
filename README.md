@@ -51,7 +51,7 @@ The main goal of this project is to attract potential clients, clearly present s
 
 Here are some highlights of the website design:
 
-| Home Page | Services | Plans | Nutrition Tips | Transformation Stories |
+| Home Page | Services | Transformation Stories | Nutrition Tips | News Articles |
 |-----------|---------|-------|----------------|----------------------|
 | ![Screenshot 1](assets/screenshots/screenshot1.png) | ![Screenshot 2](assets/screenshots/screenshot2.png) | ![Screenshot 3](assets/screenshots/screenshot3.png) | ![Screenshot 4](assets/screenshots/screenshot4.png) | ![Screenshot 5](assets/screenshots/screenshot5.png) |
 
